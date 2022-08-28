@@ -5,16 +5,17 @@ O sistema consiste em uma plataforma para auxiliar pessoas buscando auxilio com 
 
 ### Features
 - Autenticação de usuário
-- Oferta e Demanda de aluas em estilo marketplace
+- Oferta e Demanda de aulas em estilo marketplace
 - Avaliação de perfis
 - Busca com filtro de tópico
 - Bate-papo
 - Estatísticas no perfil
+- Calendário com aulas marcadas
 
 ## Tecnologias
 - Front-end: React
-- Back-end: Node.js
-- Database: MySQL
+- Back-end:  Node.js
+- Database:  Postgresql
 
 ## Grupo:
 - Bruno Ferreira: Software Engineer Back-End
