@@ -68,3 +68,7 @@ Tarefas:
 * Criar rota para atualizar perfil [Bruno] [Luis]
 * Criar rota para criação de perfil [Bruno] [Luis]
 * Criar rota de autenticação [Bruno] [Luis]
+
+## Wireframe
+
+O wireframe está disponível neste [link do figma](https://www.figma.com/file/bnuJb2HpAWOEypPzWPMhtw/Aulas-Particulares?node-id=802%3A1831)
