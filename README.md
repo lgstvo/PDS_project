@@ -23,7 +23,7 @@ O sistema consiste em uma plataforma para auxiliar pessoas buscando auxilio com 
 - Luís Gustavo: Software Engineer Back-End
 - Victoria Saliba: Software Engineer Front-End
 
-## Backlog:
+## Backlog
 
 ### Tarefas Técnicas:
     Modelar e Criar o BD (PostGreSQL) [Bruno] [Luis]
