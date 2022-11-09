@@ -84,25 +84,35 @@
                 <div class="sidebar-heading border-bottom border-dark py-5">Marcaê</div>
                 <div class="list-group list-group-flush">
                     <a class="list-group-item list-group-item-action p-3 text-white" style="background-color: rgba(20, 22, 39, 1); opacity: 1;" href="#!">
-                        <button class="btn btn-lg">Dashboard</button>
+                        <button class="btn btn-light btn-block w-100 botao-ativo">Inicio</button>
                     </a>
-                    <a class="list-group-item list-group-item-action  p-3 text-white" style="background-color: rgba(20, 22, 39, 1); opacity: 1;" href="#!">Shortcuts</a>
-                    <a class="list-group-item list-group-item-action  p-3 text-white" style="background-color: rgba(20, 22, 39, 1); opacity: 1;" href="#!">Overview</a>
-                    <a class="list-group-item list-group-item-action  p-3 text-white" style="background-color: rgba(20, 22, 39, 1); opacity: 1;" href="#!">Events</a>
-                    <a class="list-group-item list-group-item-action  p-3 text-white" style="background-color: rgba(20, 22, 39, 1); opacity: 1;" href="#!">Profile</a>
-                    <a class="list-group-item list-group-item-action  p-3 text-white" style="background-color: rgba(20, 22, 39, 1); opacity: 1;" href="#!">Status</a>
+                    <a class="list-group-item list-group-item-action p-3 text-white" style="background-color: rgba(20, 22, 39, 1); opacity: 1;" href="#!">
+                        <button class="btn btn-light btn-block w-100 botao-secundario">Calendário</button>
+                    </a>
+                    <a class="list-group-item list-group-item-action p-3 text-white" style="background-color: rgba(20, 22, 39, 1); opacity: 1;" href="#!">
+                        <button class="btn btn-light btn-block w-100 botao-secundario">Matérias</button>
+                    </a>
+                    <a class="list-group-item list-group-item-action p-3 text-white" style="background-color: rgba(20, 22, 39, 1); opacity: 1;" href="#!">
+                        <button class="btn btn-light btn-block w-100 botao-secundario">Professores</button>
+                    </a>
+                    <a class="list-group-item list-group-item-action p-3 text-white" style="background-color: rgba(20, 22, 39, 1); opacity: 1;" href="#!">
+                        <button class="btn btn-light btn-block w-100 botao-secundario">Mensagens</button>
+                    </a>
+                    <a class="list-group-item list-group-item-action p-3 text-white" style="background-color: rgba(20, 22, 39, 1); opacity: 1;" href="#!">
+                        <button class="btn btn-light btn-block w-100 botao-secundario">Configurações</button>
+                    </a>
                 </div>
             </div>
             <!-- Page content wrapper-->
             <div id="page-content-wrapper" style="background: rgba(37, 43, 66, 1); opacity: 1;">
                 <!-- Top navigation-->
-                <nav class="navbar navbar-expand-lg navbar bg border-bottom border-dark py-4">
+                <nav class="m-left-5 navbar navbar-expand-lg navbar bg py-4">
                     <div class="container-fluid">
                         <div class="pesquisar col-6">
-                            <div class="input-group mb-3 input-group-lg bg-secundario">
-                                <input type="text" class="form-control bg-secundario" placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="basic-addon2">
+                            <div class="input-group mb-3 input-group-lg">
+                                <input type="text" class="form-control " placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="basic-addon2">
                                 <div class="input-group-append">
-                                <button class="btn btn-outline-secondary btn-lg" type="button">Pesquisar</button>
+                                <button class="btn btn-outline-secondary btn-lg bg-secundario" type="button">Pesquisar</button>
                                 </div>
                             </div>
                             
@@ -112,35 +122,127 @@
                         </div>
                         <!--<button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
                         -->
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                                <li class="nav-item active"><a class="nav-link" href="#!">Home</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#!">Link</a></li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="#!">Action</a>
-                                        <a class="dropdown-item" href="#!">Another action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#!">Something else here</a>
-                                    </div>
-                                </li>
-                            </ul>
+                        <div class="col-4 align-self-end ">
+                            <div class="row align-right">
+                                <div class="align-center">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHG93DNF4sEA8G0_DeFc9-T3-v60fTmbM_9w&usqp=CAU" height="75px" style=" border-radius: 50%;">
+                                </div>
+                                <button class="navbar-toggler align-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                                <div class="collapse navbar-collapse align-center" id="navbarSupportedContent">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fulano</a>
+                                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="#!">Perfil</a>
+                                                <a class="dropdown-item" href="#!">Configurações</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="#!">Log-out</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </nav>
+            
                 <!-- Page content-->
-                <div class="container-fluid">
-                    <h1 class="mt-4">Simple Sidebar</h1>
-                    <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-                    <p>
-                        Make sure to keep all page content within the
-                        <code>#page-content-wrapper</code>
-                        . The top navbar is optional, and just for demonstration. Just create an element with the
-                        <code>#sidebarToggle</code>
-                        ID which will toggle the menu when clicked.
-                    </p>
+                <div class="m-left-5 container-fluid">
+                    <div class="row">
+                        <div class="col-8">
+                            <h2 class="mt-4 text-gray">Matérias</h2>
+                            <div class="row">
+                                <div class="row row-cols-1 row-cols-md-3 g-4">
+                                    <div class="col">
+                                        <div class="card">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/4/4259.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            
+                                        </div>
+                                        <div class="card-footer">
+                                            Agendar
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/4/4259.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            
+                                        </div>
+                                        <div class="card-footer">
+                                            Agendar
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/4/4259.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            
+                                        </div>
+                                        <div class="card-footer">
+                                            Agendar
+                                        </div>
+                                        </div>
+                                    </div>
+                                        
+                                    
+                                </div>
+                                
+                            </div>
+                            <h2 class="mt-4 text-gray">Professores</h2>
+                            <div class="row">
+                                <div class="row row-cols-1 row-cols-md-3 g-4">
+                                    <div class="col">
+                                        <div class="card">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/4/4259.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            
+                                        </div>
+                                        <div class="card-footer">
+                                            Agendar
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/4/4259.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            
+                                        </div>
+                                        <div class="card-footer">
+                                            Agendar
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/4/4259.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            
+                                        </div>
+                                        <div class="card-footer">
+                                            Agendar
+                                        </div>
+                                        </div>
+                                    </div>
+                                        
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            calendario
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

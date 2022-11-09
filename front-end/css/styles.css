@@ -78,14 +78,39 @@
     scroll-behavior: smooth;
   }
 }
+
+.m-left-5{
+  margin-left: 5% !important;
+}
+.m-right-5{
+  margin-right: 5% !important;
+}
+
+.text-gray{
+  color: var(--bs-gray-300) !important;
+}
 .bg-primario {
   background-color: rgba(20, 22, 39, 1); 
   opacity: 1;
 }
 
 .bg-secundario{
-  background: rgba(209, 243, 102, 1);
+  background-color: rgba(209, 243, 102, 1) !important;
   opacity: 1;
+}
+
+.botao-ativo{
+  background-color: rgba(166, 42, 187, 1) !important;
+  opacity: 1 !important;
+  border-color:rgba(0, 0, 0, 0)!important;
+  color: black !important;
+
+}
+.botao-secundario{
+  background-color: rgba(61, 50, 113, 1) !important;
+  opacity: 1 !important;
+  border-color:rgba(0, 0, 0, 0)!important;
+  color: var(--bs-gray-600) !important;
 }
 
 body {
