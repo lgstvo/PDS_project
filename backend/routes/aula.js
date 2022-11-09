@@ -2,21 +2,20 @@ const express = require('express')
 const router = express.Router()
 const controller = require('../controllers/aula')
 
-router.get('/' , controller.getAula)
+router.get('/' , controller.listAula)
+
+router.get('/filtros',  controller.getAulaFilter)
 
 router.post('/' , controller.createAula)
 
-router.patch('/' , (req, res, next) => {
+router.patch('/:idAula' , (req, res, next) => {
     res.status(204).json({
         message: 'Patch aulas'
     })
 })
 
-router.get('/:id', (req, res , next) => {
-    res.status(200).json({
-        message: 'Get aula'
-    })
-})
+router.get('/:id',  controller.getAula)
+
 
 router.get('/:idAluno', (req, res , next) => {
     res.status(200).json({
