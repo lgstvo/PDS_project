@@ -9,16 +9,21 @@
 <body>
     <div class="v803_586"><span class="v803_587">Marcaê</span>
         <div class="v803_588">
-            <div class="v803_589"><span class="v803_590">Sign In</span><span class="v803_591">Enter your email and
-                    password to sign in</span></div>
+            <div class="v803_589"><span class="v803_590">Sign In</span><span class="v803_591">Digite seu email e senha para entrar</span></div>
             <div class="v803_592">
-                <div class="name"></div>
-                <div class="name"></div>
+                <div class="name">
+                    <div class="campo_login"><span class="v816_1552">Email</span></div>
+                </div>
+                <div class="name">
+                    <div class="campo_login"><span class="v816_1552">Senha</span></div>
+                </div>
             </div>
             <div class="v803_595">
                 <div class="name"></div><span class="v803_597">Remember me</span>
             </div>
-            <div class="name"></div><span class="v803_599">Ainda não se cadastrou? Sign up</span>
+            <div class="name">
+                <div class="v816_1546"><span class="v816_1547">Login</span></div>
+            </div><span class="v803_599">Ainda não se cadastrou? Sign up</span>
         </div>
         <div class="v803_600">
             <div class="v803_601">
@@ -183,6 +188,7 @@
 
     body {
         font-size: 14px;
+        margin: 0px;
     }
 
     .v803_586 {
@@ -262,6 +268,7 @@
         font-size: 18px;
         opacity: 1;
         text-align: left;
+        margin: 15px;
     }
 
     .v803_592 {
@@ -399,7 +406,7 @@
         margin: 21px;
         opacity: 1;
         position: absolute;
-        top: 28px;
+        top: 10px;
         left: 40px;
         overflow: hidden;
     }
@@ -530,7 +537,6 @@
 
     .v803_616 {
         width: 610px;
-        height: 574px;
         background: rgba(0, 0, 0, 1);
         opacity: 1;
         position: relative;
@@ -1483,7 +1489,7 @@
         background-size: cover;
         opacity: 1;
         position: absolute;
-        top: 343px;
+        top: 80px;
         left: 74px;
         overflow: hidden;
     }
@@ -1962,4 +1968,64 @@
         opacity: 1;
         text-align: left;
     }
+
+    .campo_login {
+            width: 500px;
+            height: 52px;
+            background: rgba(255, 255, 255, 1);
+            padding: 15px 25px;
+            margin: 10px;
+            opacity: 1;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            overflow: hidden;
+        }
+
+        .v816_1552 {
+            width: 200px;
+            color: rgba(0, 0, 0, 1);
+            position: absolute;
+            top: 15px;
+            left: 25px;
+            font-family: Montserrat;
+            font-weight: Bold;
+            font-size: 18px;
+            opacity: 1;
+            text-align: left;
+        }
+
+        .v816_1546 {
+            width: 500px;
+            height: 52px;
+            background: linear-gradient(rgba(214, 19, 136, 1), rgba(0, 70, 136, 1));
+            padding: 15px 25px;
+            opacity: 1;
+            position: relative;
+            top: 300px;
+            left: 0px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            margin: 15px;
+        }
+
+        .v816_1547 {
+            width: 96px;
+            color: rgba(255, 255, 255, 1);
+            top: 10px;
+            left: 25px;
+            font-family: Montserrat;
+            font-weight: Bold;
+            font-size: 18px;
+            opacity: 1;
+            text-align: center;
+        }
 </style>
