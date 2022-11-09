@@ -8,19 +8,11 @@ router.get('/filtros',  controller.getAulaFilter)
 
 router.post('/' , controller.createAula)
 
-router.patch('/:idAula' , (req, res, next) => {
-    res.status(204).json({
-        message: 'Patch aulas'
-    })
-})
+router.patch('/:idAula' , controller.updateAula)
 
 router.get('/:id',  controller.getAula)
 
 
-router.get('/:idAluno', (req, res , next) => {
-    res.status(200).json({
-        message: 'Get aulas do aluno'
-    })
-})
+router.get('/:idAluno', controller.getAula)
 
 module.exports = router
