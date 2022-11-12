@@ -65,10 +65,23 @@ html .fc,
     font-weight: 100;
     margin-bottom: 10px;
 }
+
+.fc-header-title .menu-inicio{
+	margin-top: 0;
+	white-space: nowrap;
+	font-size: 20px;
+    font-weight: 50;
+    margin-bottom: 10px;
+}
 	
 .fc .fc-header-space {
 	padding-left: 10px;
 	}
+
+.quebra-linha-inicio::after{
+		content: "\a";
+		white-space: pre;
+}
 	
 .fc-header .fc-button {
 	margin-bottom: 1em;
@@ -220,6 +233,15 @@ html .fc,
 	transition: all 0.2s;
 	-webkit-transition: all 0.2s;
 }
+
+.fc-button-month.fc-state-default.menu-inicio, .fc-button-agendaWeek.fc-state-default.menu-inicio, .fc-button-agendaDay.fc-state-default.menu-inicio{
+    min-width: 5px;
+	text-align: center;
+	transition: all 0.2s;
+	-webkit-transition: all 0.2s;
+}
+
+
 .fc-state-hover,
 .fc-state-down,
 .fc-state-active,

@@ -79,6 +79,12 @@
   }
 }
 
+a.active{
+  border-color:  rgba(20, 22, 39, 1)!important;
+}
+.tab-pane:not(.active) {
+  display: none;
+}
 .m-left-5{
   margin-left: 5% !important;
 }
@@ -90,8 +96,12 @@
   color: var(--bs-gray-300) !important;
 }
 .bg-primario {
-  background-color: rgba(20, 22, 39, 1); 
-  opacity: 1;
+  background-color: rgba(20, 22, 39, 1) !important; 
+  opacity: 1 !important;
+}
+.bg-subprimario {
+  background-color: rgba(37, 43, 66, 1) !important; 
+  opacity: 1 !important;
 }
 
 .bg-secundario{
