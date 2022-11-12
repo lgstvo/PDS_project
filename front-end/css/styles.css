@@ -108,6 +108,14 @@ a.active{
   background-color: rgba(209, 243, 102, 1) !important;
   opacity: 1;
 }
+.bg-roxo{
+  background-color: rgba(166, 42, 187, 1) !important;
+  opacity: 1 !important;
+}
+
+.card{
+  border: unset !important;
+}
 
 .botao-ativo{
   background-color: rgba(166, 42, 187, 1) !important;
