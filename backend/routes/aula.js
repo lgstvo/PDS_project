@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const controller = require('../controllers/aula')
-const checkAuth = require('../adaptadores/autenticao-adapter')
+const checkAuth = require('../adaptadores/autenticacao-adapter')
 
 /**
  * @swagger
