@@ -110,7 +110,6 @@ exports.updatePerfil = (req, res, next) => {
         id : req.body.id,
         nome: req.body.nome,
         isProfessor: req.body.isProfessor,
-        pwd: hash,
         email: req.body.email,
         telefone: req.body.telefone,
         curriculo: req.body.curriculo
