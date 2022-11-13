@@ -20,6 +20,8 @@ O sistema consiste em uma plataforma para auxiliar pessoas buscando auxilio com 
 ## Arquitetura Hexgonal
 - Razão da Escolha: Optmaos pelo uso desta arquitetura para permitir a separação da camada de domínio do restante do código, e isolar a comunicação com os meios externos, como o front end ou o BD, de forma que a a tecnologia utilizada em cada parte não interfira no funcionamento da API. Por ex, se o BD for mudado para o MYSQL, não afeta o restante do código de domínio, que está isolado.
 - Detalhamento: Possuímos na pasta adapters os nossos adaptadores, que servem como meio de comunicação entre as requests que recebemos, e envia as informações relevantes para o nosso adaptador, separados por objeto do domínio (Perfil e Aula). Os adaptadores se comunicam então com as nossas classes de domínio, neste caso chamadas services. Estas contemplam nossas regras de negócio. Quando necessário elas se comunicam com as ports (chamadas de repostiories), partes que implementam as informações do BD, como as queries.
+- Controllers: Foram criados como uma maneira de encapsular a lógica das nossas requisições separadamente da lógica de roteamento das mesmas, para permitir que mudanças feitas no funcionamento do código não afete as rotas.
+
 
 ## Grupo:
 - Bruno Ferreira: Software Engineer Back-End
