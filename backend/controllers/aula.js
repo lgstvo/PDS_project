@@ -8,8 +8,9 @@ exports.getAula = (req, res, next) => {
                 aula
             })
         }
-    ).catch(err => console.log(err))
-
+    ).catch(err => res.status(500).json({
+        error: err
+    }))
 }
 
 exports.listAula = (req, res, next) => {
@@ -20,7 +21,9 @@ exports.listAula = (req, res, next) => {
                 aula
             })
         }
-    ).catch(err => console.log(err))
+    ).catch(err => res.status(500).json({
+        error: err
+    }))
 }
 
 exports.createAula = (req, res, next) => {
@@ -32,26 +35,40 @@ exports.createAula = (req, res, next) => {
     adapter.createAula(aula).then(
         result => {
             var marcacao = {
-                idAula: result.id,
+                idAula: result.rows[0].id,
                 idPerfil: req.params.idPerfil
             }
             adapter.marcarAula(marcacao)
+            res.status(201).json({
+                message: "Aula Criada"
+            })
         }
-    ).catch(err => console.log(err))
-    res.status(201).json({
-        message: "Aula Criada"
+    ).catch(err => {
+        console.log(err)
+        res.status(500).json({
+            error: err
+        })
     })
 }
 
 exports.marcarAula = (req, res, next) => {
-    adapter.marcarAula(
-        {
-            idAula: req.body.idAula,
-            idPerfil: req.body.idPerfil,
-        })
-    res.status(201).json({
-        message: "Aula Marcada"
-    })
+    const marcacao = {
+        idAula: req.body.idAula,
+        idPerfil: req.body.idPerfil,
+    }
+    adapter.marcarAula(marcacao
+        ).then(
+            result =>
+                res.status(201).json({
+                    message: "Aula Marcada"
+                })
+        ).catch(err => {
+            console.log(err)
+            res.status(500).json({
+                error: err
+            })
+        }
+        )
 }
 
 exports.updateAula = (req, res, next) => {
@@ -61,9 +78,15 @@ exports.updateAula = (req, res, next) => {
         professor: req.body.professor,
         id: req.body.idAula
     }
-    adapter.updateAula(aula)
-    res.status(201).json({
-        message: "Aula Criada"
+    adapter.updateAula(aula).then(() => {
+        res.status(204).json({
+            message: "Aula Atualizada"
+        })
+    }).catch(err => {
+        console.log(err)
+        res.status(500).json({
+            error: err
+        })
     })
 }
 
@@ -79,6 +102,8 @@ exports.getAulaFilter = (req, res, next) => {
                 aula
             })
         }
-    ).catch(err => console.log(err))
+    ).catch(err => res.status(500).json({
+        error: err
+    }))
 
 }

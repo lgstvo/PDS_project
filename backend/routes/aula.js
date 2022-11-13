@@ -90,6 +90,24 @@ router.get('/filtros', controller.getAulaFilter)
 
 /**
  * @swagger
+ * /aula/marcacao:
+ *   post:
+ *     summary: Returns all perfils
+ *     tags: [Aula]
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref: '#/components/schemas/Marcacao'
+ *     responses:
+ *       201:
+ *         description: the list of the posts'
+ */
+ router.post('/marcar', controller.marcarAula)
+
+/**
+ * @swagger
  * /aula/:idAula:
  *   post:
  *     summary: Returns all perfils
@@ -105,24 +123,6 @@ router.get('/filtros', controller.getAulaFilter)
  *         description: the list of the posts
  */
 router.post('/:idPerfil', controller.createAula)
-
-/**
- * @swagger
- * /aula/marcacao:
- *   post:
- *     summary: Returns all perfils
- *     tags: [Aula]
- *     requestBody:
- *      required: true
- *      content:
- *        application/json:
- *          schema:
- *            $ref: '#/components/schemas/Marcacao'
- *     responses:
- *       201:
- *         description: the list of the posts'
- */
-router.post('/marcacao', controller.createAula)
 
 /**
  * @swagger
@@ -168,7 +168,7 @@ router.get('/:id', controller.getAula)
  * @swagger
  * /aula/:idAluno:
  *   get:
- *     summary: Returns all perfils
+ *     summary: Returns all aulas Marcadas
  *     tags: [Aula]
  *     requestBody:
  *      required: true

@@ -71,6 +71,24 @@ router.get('/:id', controller.getPerfil)
 
 /**
  * @swagger
+ * /perfil/aulas-marcadas/:id:
+ *   get:
+ *     summary: Returns all perfils
+ *     tags: [Perfil]
+ *     responses:
+ *       200:
+ *         description: the list of the posts
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Perfil'
+ */
+ router.get('/aulas-marcadas/:id', controller.getAulasMarcadas)
+
+/**
+ * @swagger
  * /perfil:
  *   post:
  *     tags: [Perfil]

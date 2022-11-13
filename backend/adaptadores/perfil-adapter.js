@@ -1,7 +1,11 @@
 const perfilService = require('../services/perfil-service')
 
 exports.getPerfil = (id) => {
-    return perfilService.getPerfil()
+    return perfilService.getPerfil(id)
+}
+
+exports.getAulasMarcadas = (id) => {
+    return perfilService.getAulasMarcadas(id)
 }
 
 exports.createPerfil = (perfilToCreate) => {
@@ -17,5 +21,9 @@ exports.getAvaliacaoPerfil = (idPerfil) => {
 }
 
 exports.createAvaliacao = (avaliacao) => {
-    perfilService.createAvaliacao(avaliacao)
+    return perfilService.createAvaliacao(avaliacao)
+}
+
+exports.calculateAvaliacao = (avaliacoes, quantity) => {
+    return perfilService.calculateAvaliacao(avaliacoes, quantity)
 }
