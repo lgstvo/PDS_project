@@ -16,7 +16,10 @@ exports.createAula = (aula) => {
     return aulaRepo.createAula(aula)
 }
 
-
 exports.updateAula = (aula) => {
     return aulaRepo.updateAula(aula)
+}
+
+exports.marcarAula = (marcacao) => {
+    return aulaRepo.marcarAula(marcacao)
 }

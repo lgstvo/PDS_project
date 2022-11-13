@@ -16,7 +16,10 @@ exports.updateAula = (aula) => {
     return aulaService.updateAula()
 }
 
-
 exports.createAula = (aula) => {
     aulaService.createAula(aula)
+}
+
+exports.marcarAula = (marcacao) => {
+    aulaService.marcarAula(marcacao)
 }

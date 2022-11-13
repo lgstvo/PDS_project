@@ -2,17 +2,190 @@ const express = require('express')
 const router = express.Router()
 const controller = require('../controllers/aula')
 
-router.get('/' , controller.listAula)
+/**
+ * @swagger
+ *  tags:
+ *    name: Aula
+ *    description: aulas
+ */
 
-router.get('/filtros',  controller.getAulaFilter)
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Aula:
+ *       type: object
+ *       properties:
+ *        id:
+ *         type: integer
+ *         description: The Auto-generated id of a post
+ *        dataAula:
+ *          type: string
+ *          description: nome do perfil
+ *        professor:
+ *         type: string
+ *         description: professor
+ *        materia:
+ *         type: string
+ *         descripton: materia
+ *     Marcacao:
+ *      type: object
+ *      properties:
+ *          idPerfil:
+ *              type: integer
+ *          idAula:
+ *              type: integer
+ *     Filtros:
+ *       type: object
+ *       properties:
+ *          dataAula:
+ *              type: string
+ *          professor:
+ *              type: string
+ *          materia: 
+ *              type: string
+ */
 
-router.post('/' , controller.createAula)
+/**
+ * @swagger
+ * /aula/:id:
+ *   get:
+ *     summary: Returns all perfils
+ *     tags: [Aula]
+ *     responses:
+ *       200:
+ *         description: the list of the posts
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Aula'
+ */
+router.get('/', controller.listAula)
 
-router.patch('/:idAula' , controller.updateAula)
+/**
+ * @swagger
+ * /aula/filtros:
+ *   get:
+ *     summary: Returns all perfils
+ *     tags: [Aula]
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref: '#/components/schemas/Filtros'
+ *     responses:
+ *       200:
+ *         description: the list of the posts
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Aula'
+ */
+router.get('/filtros', controller.getAulaFilter)
 
-router.get('/:id',  controller.getAula)
+/**
+ * @swagger
+ * /aula/:idAula:
+ *   post:
+ *     summary: Returns all perfils
+ *     tags: [Aula]
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref: '#/components/schemas/Aula'
+ *     responses:
+ *       201:
+ *         description: the list of the posts
+ */
+router.post('/:idPerfil', controller.createAula)
 
+/**
+ * @swagger
+ * /aula/marcacao:
+ *   post:
+ *     summary: Returns all perfils
+ *     tags: [Aula]
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref: '#/components/schemas/Marcacao'
+ *     responses:
+ *       201:
+ *         description: the list of the posts'
+ */
+router.post('/marcacao', controller.createAula)
 
+/**
+ * @swagger
+ * /aula/:idAula:
+ *   post:
+ *     summary: Returns all perfils
+ *     tags: [Aula]
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref: '#/components/schemas/Aula'
+ *     responses:
+ *       204:
+ *         description: the list of the posts
+ */
+router.patch('/:idAula', controller.updateAula)
+
+/**
+ * @swagger
+ * /aula/:idAula:
+ *   get:
+ *     summary: Returns all perfils
+ *     tags: [Aula]
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref: '#/components/schemas/Filtros'
+ *     responses:
+ *       200:
+ *         description: the list of the posts
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Aula'
+ */
+router.get('/:id', controller.getAula)
+
+/**
+ * @swagger
+ * /aula/:idAluno:
+ *   get:
+ *     summary: Returns all perfils
+ *     tags: [Aula]
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref: '#/components/schemas/Filtros'
+ *     responses:
+ *       200:
+ *         description: the list of the posts
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Aula'
+ */
 router.get('/:idAluno', controller.getAula)
 
 module.exports = router

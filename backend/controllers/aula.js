@@ -9,7 +9,7 @@ exports.getAula = (req, res, next) => {
             })
         }
     ).catch(err => console.log(err))
-    
+
 }
 
 exports.listAula = (req, res, next) => {
@@ -20,26 +20,45 @@ exports.listAula = (req, res, next) => {
                 aula
             })
         }
-    ).catch(err => console.log(err)) 
+    ).catch(err => console.log(err))
 }
 
 exports.createAula = (req, res, next) => {
     const aula = {
         materia: req.body.materia,
-        dataAula:req.body.dataAula,
-        professor:req.body.professor
+        dataAula: req.body.dataAula,
+        professor: req.body.professor
     }
-    adapter.createAula(aula)
+    adapter.createAula(aula).then(
+        result => {
+            var marcacao = {
+                idAula: result.id,
+                idPerfil: req.params.idPerfil
+            }
+            adapter.marcarAula(marcacao)
+        }
+    ).catch(err => console.log(err))
     res.status(201).json({
         message: "Aula Criada"
+    })
+}
+
+exports.marcarAula = (req, res, next) => {
+    adapter.marcarAula(
+        {
+            idAula: req.body.idAula,
+            idPerfil: req.body.idPerfil,
+        })
+    res.status(201).json({
+        message: "Aula Marcada"
     })
 }
 
 exports.updateAula = (req, res, next) => {
     const aula = {
         materia: req.body.materia,
-        dataAula:req.body.dataAula,
-        professor:req.body.professor,
+        dataAula: req.body.dataAula,
+        professor: req.body.professor,
         id: req.body.idAula
     }
     adapter.updateAula(aula)
@@ -51,8 +70,8 @@ exports.updateAula = (req, res, next) => {
 exports.getAulaFilter = (req, res, next) => {
     var aula = adapter.getAulaFilter({
         dataAula: req.body.dataAula,
-        materia:req.body.materia,
-        professor:req.body.professor
+        materia: req.body.materia,
+        professor: req.body.professor
     }).then(
         result => {
             var aula = result.rows
@@ -60,6 +79,6 @@ exports.getAulaFilter = (req, res, next) => {
                 aula
             })
         }
-    ).catch(err => console.log(err)) 
-    
+    ).catch(err => console.log(err))
+
 }
