@@ -39,6 +39,28 @@ const controller = require('../controllers/perfil')
  *           type: array
  *           items:
  *              type: string
+ *     PerfilUpdate:
+ *      type: object
+ *      properties:
+ *        id:
+ *          type: integer
+ *          description: The Auto-generated id of a post
+ *        nome:
+ *          type: string
+ *          description: nome do perfil
+ *        isProfessor:
+ *          type: boolean
+ *          description: is professor
+ *        email:
+ *          type: string
+ *          descripton: pwd
+ *        telefone:
+ *          type: string
+ *          descripton: pwd
+ *        curriculo:
+ *          type: array
+ *          items:
+ *             type: string
  *     Avaliacao:
  *       type: object
  *       properties:
@@ -118,7 +140,7 @@ router.post('/', controller.createPerfil)
  *      content:
  *        application/json:
  *          schema:
- *            $ref: '#/components/schemas/Post'
+ *            $ref: '#/components/schemas/PerfilUpdate'
  *     responses:
  *       200:
  *         description: the list of the posts
@@ -130,28 +152,6 @@ router.post('/', controller.createPerfil)
  *                 $ref: '#/components/schemas/Perfil'
  */
 router.patch('/', controller.updatePerfil)
-
-/**
- * @swagger
- * /perfil:
- *   get:
- *     tags: [Perfil]
- *     requestBody:
- *      required: true
- *      content:
- *        application/json:
- *          schema:
- *            $ref: '#/components/schemas/Post'
- *     responses:
- *       200:
- *         description: the list of the posts
- *         content:
- *           application/json:
- *             schema:
- *               type: array
- *               items:
- *                 $ref: '#/components/schemas/Avaliacao'
- */
 
 /**
  * @swagger

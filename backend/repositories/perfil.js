@@ -20,9 +20,9 @@ exports.createPerfil = async (perfilToCreate) => {
 
 exports.updatePerfil = async (perfilToUpdate) => {
     if (perfilToUpdate.curriculo.length != 0) {
-        await pool.query('UPDATE perfil  SET  nome = ' + '\'' + perfilToUpdate.nome + '\'' + ',isprofessor =' + '\'' + perfilToUpdate.isProfessor + '\'' + ', pwd =' + '\'' + perfilToUpdate.pwd + '\'' + ', email = ' + '\'' + perfilToUpdate.email + '\'' + ', telefone =' + '\'' + perfilToUpdate.email + '\'' + ' ,curriculo =' + updateArrayCurriculo(perfilToUpdate.curriculo) + ' WHERE  id =' + perfilToUpdate.id)
+        await pool.query('UPDATE perfil  SET  nome = ' + '\'' + perfilToUpdate.nome + '\'' + ',isprofessor =' + '\'' + perfilToUpdate.isProfessor + ', email = ' + '\'' + perfilToUpdate.email + '\'' + ', telefone =' + '\'' + perfilToUpdate.email + '\'' + ' ,curriculo =' + updateArrayCurriculo(perfilToUpdate.curriculo) + ' WHERE  id =' + perfilToUpdate.id)
     }else {
-        await pool.query('UPDATE perfil  SET  nome = ' + '\'' + perfilToUpdate.nome + '\'' + ',isprofessor =' + '\'' + perfilToUpdate.isProfessor + '\'' + ', pwd =' + '\'' + perfilToUpdate.pwd + '\'' + ', email = ' + '\'' + perfilToUpdate.email + '\'' + ', telefone =' + '\'' + perfilToUpdate.email + '\'' + ' WHERE  id =' + perfilToUpdate.id)
+        await pool.query('UPDATE perfil  SET  nome = ' + '\'' + perfilToUpdate.nome + '\'' + ',isprofessor =' + '\'' + perfilToUpdate.isProfessor + ', email = ' + '\'' + perfilToUpdate.email + '\'' + ', telefone =' + '\'' + perfilToUpdate.email + '\'' + ' WHERE  id =' + perfilToUpdate.id)
     }   
 }
 
