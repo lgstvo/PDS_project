@@ -106,33 +106,24 @@ exports.createAvaliacaoPerfil = (req, res, next) => {
 }
 
 exports.updatePerfil = (req, res, next) => {
-    bcrypt.hash(req.body.pwd, 10, (err, hash) => {
-        if (err) {
-            return res.status(500).json({
-                error: err
-            })
-        } else {
-            const perfil = {
-                id : req.body.id,
-                nome: req.body.nome,
-                isProfessor: req.body.isProfessor,
-                pwd: hash,
-                email: req.body.email,
-                telefone: req.body.telefone,
-                curriculo: req.body.curriculo
-            }
-            adapter.updatePerfil(perfil).then(
-                result => res.status(204).json({
-                    message: "Perfil Atualizado"
-                })
-            ).catch(err => {
-                console.log(err)
-                res.status(500).json({
-                    error: err
-                })
-            }
-            )
-        }
+    const perfil = {
+        id : req.body.id,
+        nome: req.body.nome,
+        isProfessor: req.body.isProfessor,
+        pwd: hash,
+        email: req.body.email,
+        telefone: req.body.telefone,
+        curriculo: req.body.curriculo
+    }
+    adapter.updatePerfil(perfil).then(
+        result => res.status(204).json({
+            message: "Perfil Atualizado"
+        })
+    ).catch(err => {
+        console.log(err)
+        res.status(500).json({
+            error: err
+        })
     }
     )
 }
