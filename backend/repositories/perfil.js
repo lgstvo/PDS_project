@@ -1,5 +1,10 @@
 const pool = require('../database/database')
 
+exports.login = async (email) => {
+    var result = await pool.query('SELECT id, email, pwd FROM perfil WHERE email=' + '\'' + email + '\'')
+    return result
+}
+
 exports.getPerfil = async (id) => {
     var result = await pool.query('SELECT id, nome, isprofessor, email, telefone, curriculo FROM perfil WHERE id=' + id)
     return result

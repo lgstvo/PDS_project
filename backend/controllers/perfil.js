@@ -1,6 +1,23 @@
 const adapter = require('../adaptadores/perfil-adapter')
 const bcrypt = require('bcrypt')
-const { Connection } = require('pg')
+
+exports.login = (req, res, next) => {
+    adapter.login(req.body.email).then(
+        result => {
+            if(result.rowCount < 1){
+                res.status(401).json({
+                    message: 'Auth Falhou'
+                })
+            }
+            adapter.getToken(result.rows[0], req.body.pwd, res)
+        }
+    ).catch(err => {
+        console.log(err)
+        res.status(500).json({
+            error: err
+        })
+    })
+}
 
 exports.getPerfil = (req, res, next) => {
     adapter.getPerfil(req.params.id).then(

@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const controller = require('../controllers/perfil')
-
+const checkAuth = require('../adaptadores/autenticao-adapter')
 
 /**
  * @swagger
@@ -70,8 +70,32 @@ const controller = require('../controllers/perfil')
  *            type: integer
  *          notaSimplicidade:
  *            type: integer
+ *     Login:
+ *       type: object
+ *       properties:
+ *          email:
+ *            type: string
+ *          pwd:
+ *            type: string
  */
 
+/**
+ * @swagger
+ * /perfil/login:
+ *   get:
+ *     summary: Login
+ *     tags: [Perfil]
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref: '#/components/schemas/Login'
+ *     responses:
+ *       200:
+ *         description: the list of the posts
+ */
+ router.get('/login', controller.login)
 
 /**
  * @swagger
@@ -89,7 +113,7 @@ const controller = require('../controllers/perfil')
  *               items:
  *                 $ref: '#/components/schemas/Perfil'
  */
-router.get('/:id', controller.getPerfil)
+router.get('/:id', checkAuth, controller.getPerfil)
 
 /**
  * @swagger
@@ -107,7 +131,7 @@ router.get('/:id', controller.getPerfil)
  *               items:
  *                 $ref: '#/components/schemas/Perfil'
  */
- router.get('/aulas-marcadas/:id', controller.getAulasMarcadas)
+ router.get('/aulas-marcadas/:id', checkAuth, controller.getAulasMarcadas)
 
 /**
  * @swagger
@@ -119,7 +143,7 @@ router.get('/:id', controller.getPerfil)
  *      content:
  *        application/json:
  *          schema:
- *            $ref: '#/components/schemas/Post'
+ *            $ref: '#/components/schemas/Perfil'
  *     responses:
  *       200:
  *         description: the list of the posts
@@ -128,7 +152,7 @@ router.get('/:id', controller.getPerfil)
  *             schema:
  *               $ref: '#/components/schemas/Perfil'
  */
-router.post('/', controller.createPerfil)
+router.post('/', checkAuth, controller.createPerfil)
 
 /**
  * @swagger
@@ -151,7 +175,7 @@ router.post('/', controller.createPerfil)
  *               items:
  *                 $ref: '#/components/schemas/Perfil'
  */
-router.patch('/', controller.updatePerfil)
+router.patch('/', checkAuth, controller.updatePerfil)
 
 /**
  * @swagger
@@ -167,7 +191,7 @@ router.patch('/', controller.updatePerfil)
  *             schema:
  *               $ref: '#/components/schemas/Avaliacao'
  */
-router.get('/avaliacao/:idPerfil', controller.getAvaliacaoPerfil)
+router.get('/avaliacao/:idPerfil', checkAuth, controller.getAvaliacaoPerfil)
 
 /**
  * @swagger
@@ -183,6 +207,6 @@ router.get('/avaliacao/:idPerfil', controller.getAvaliacaoPerfil)
  *             schema:
  *               $ref: '#/components/schemas/Avaliacao'
  */
-router.post('/avaliacao/:idPerfil', controller.createAvaliacaoPerfil)
+router.post('/avaliacao/:idPerfil', checkAuth, controller.createAvaliacaoPerfil)
 
 module.exports = router

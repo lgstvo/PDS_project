@@ -1,5 +1,13 @@
 const perfilService = require('../services/perfil-service')
 
+exports.login = (email) => {
+    return perfilService.login(email)
+}
+
+exports.getToken = (user, pwd, res) => {
+    return perfilService.getToken(user, pwd, res)
+}
+
 exports.getPerfil = (id) => {
     return perfilService.getPerfil(id)
 }

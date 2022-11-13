@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const controller = require('../controllers/aula')
+const checkAuth = require('../adaptadores/autenticao-adapter')
 
 /**
  * @swagger
@@ -104,7 +105,7 @@ router.get('/filtros', controller.getAulaFilter)
  *       201:
  *         description: the list of the posts'
  */
- router.post('/marcar', controller.marcarAula)
+ router.post('/marcar', checkAuth, controller.marcarAula)
 
 /**
  * @swagger
@@ -122,7 +123,7 @@ router.get('/filtros', controller.getAulaFilter)
  *       201:
  *         description: the list of the posts
  */
-router.post('/:idPerfil', controller.createAula)
+router.post('/:idPerfil', checkAuth,controller.createAula)
 
 /**
  * @swagger
@@ -140,7 +141,7 @@ router.post('/:idPerfil', controller.createAula)
  *       204:
  *         description: the list of the posts
  */
-router.patch('/:idAula', controller.updateAula)
+router.patch('/:idAula', checkAuth, controller.updateAula)
 
 /**
  * @swagger
@@ -186,6 +187,6 @@ router.get('/:id', controller.getAula)
  *               items:
  *                 $ref: '#/components/schemas/Aula'
  */
-router.get('/:idAluno', controller.getAula)
+router.get('/:idAluno', checkAuth ,controller.getAula)
 
 module.exports = router
