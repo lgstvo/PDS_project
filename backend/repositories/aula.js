@@ -1,7 +1,7 @@
 const pool = require('../database/database')
 
 exports.listAula = async () => {
-    var result = await pool.query('SELECT id, dataaula, professor, materia FROM aula')
+    var result = await pool.query('SELECT * FROM aula')
     return result
 }
 
@@ -20,17 +20,17 @@ exports.getAulaFilter = async (filtros) => {
 }
 
 exports.createAula = async (aulaToInsert) => {
-    const id = await pool.query('insert into aula (materia, dataAula, professor) values ( ' + aulaToInsert.materia + ',' + aulaToInsert.dataAula + ',' + aulaToInsert.professor + ') returning id')
+    const id = await pool.query('insert into aula (materia, dataAula, professor) values ( ' + '\'' + aulaToInsert.materia + '\'' + ',\'' + aulaToInsert.dataAula + '\',' + '\'' + aulaToInsert.professor + '\'' + ') returning id')
 
     return id
 }
 
 exports.marcarAula = async (marcacao) => {
-    await pool.query('insert into perfilaula (idaula, idperfil) values ( ' + marcacao.idAula + ',' + marcacao.idPerfil + ')')
+    return await pool.query('insert into perfilaula (idaula, idperfil) values ( ' + marcacao.idAula + ',' + marcacao.idPerfil + ')')
 }
 
 exports.updateAula = async (aulaToUpdate) => {
-    const aula = await pool.query('UPDATE aula  SET  materia = ' + aulaToUpdate.materia + ',dataAula =' + aulaToUpdate.dataAula + ', professor =' + aulaToUpdate.professor + 'WHERE  id =' + aulaToUpdate.id)
+    const aula = await pool.query('UPDATE aula  SET  materia = ' + '\'' + aulaToUpdate.materia + '\'' + ',dataAula =' + '\'' + aulaToUpdate.dataAula + '\'' + ', professor =' + '\'' + aulaToUpdate.professor + '\'' + ' WHERE  id =' + aulaToUpdate.id)
 }
 
 function checkProfessorMateriaFalse(professor, materia) {
