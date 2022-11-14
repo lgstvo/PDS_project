@@ -152,7 +152,7 @@ router.get('/:id', checkAuth, controller.getPerfil)
  *             schema:
  *               $ref: '#/components/schemas/Perfil'
  */
-router.post('/', checkAuth, controller.createPerfil)
+router.post('/', controller.createPerfil)
 
 /**
  * @swagger
