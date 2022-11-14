@@ -39,15 +39,17 @@ app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.use((res, req, next) => {
-    res.header('Access-Control-Allow-Origin', '*')
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With-Content-Type, Accept, Authorization')
-    if (req.method === 'OPTIONS') {
-        res.header('Access-Control-Allow-Methods', 'POST, PATCH, GET')
-        return res.status(200).json({})
+app.use((req, res, next) => {
+    const allowedOrigins = ['http://127.0.0.1:8020', 'http://localhost:8020', 'http://127.0.0.1:9000', 'http://localhost:9000'];
+    const origin = req.headers.origin;
+    if (allowedOrigins.includes(origin)) {
+         res.setHeader('Access-Control-Allow-Origin', origin);
     }
-    next();
-})
+    res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.header('Access-Control-Allow-Credentials', true);
+    return next();
+  });
 
 app.use('/perfil', perfilRoutes)
 app.use('/aula', aulaRoutes)
