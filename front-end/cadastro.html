@@ -1,8 +1,10 @@
-    <html>
+<html>
 
     <head>
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+        <script src='js/jquery-1.10.2.js' type="text/javascript"></script>
+ 
         <script>
             function addPerfil(nome, boolProf, senha, email, tel, curriculo){
                 var settings = {
@@ -23,8 +25,8 @@
                 };
                 
                 $.ajax(settings).done(function (response) {
-                    console.log(response);
-                  });
+                    alert(response.message);
+                  });
             }
         </script>
     </head>
@@ -44,33 +46,31 @@
                 </div>
                 <div class="v811_556"><span class="v811_557">Cadastro</span><span class="v811_558">Informe seus
                         dados</span></div>
-                <form action="addPerfil()">
-                    <div class="v811_559">
-                        <div class="name">
-                            <label class="label-input"> Telefone <input class="campo_cadastro"  id="#tel"></input></label>
-                        </div>
-                        <div class="name">
-                            <label class="label-input">Senha<input class="campo_cadastro"  id="#senha"></input></label>
-                        </div>
-                        <div class="name">
-                            <label class="label-input">Confirmação Senha<input class="campo_cadastro" ></input></label>
-                        </div>
-                    </div>
-                    <div class="v816_1532">
-                        <div class="name">
-                            <label class="label-input"> Nome <input class="campo_cadastro" id="#nome"></input></label>
-                        </div>
-                        <div class="name">
-                            <label class="label-input">Email<input class="campo_cadastro"  id="#email"></input></label>
-                        </div>
-                        <div class="name">
-                            <label class="label-input">Currículo<input class="campo_cadastro"  id="#curriculo"></input></label>
-                        </div>
+                <div class="v811_559">
+                    <div class="name">
+                        <label class="label-input"> Telefone <input class="campo_cadastro"  id="tel"></input></label>
                     </div>
                     <div class="name">
-                        <input type="submit" value="Cadastrar" class="button_cadastrar" id="#button-login"  ><span class="v816_1547">Cadastrar</span></input>
+                        <label class="label-input">Senha<input class="campo_cadastro"  id="senha"></input></label>
                     </div>
-                </form>
+                    <div class="name">
+                        <label class="label-input">Confirmação Senha<input class="campo_cadastro" ></input></label>
+                    </div>
+                </div>
+                <div class="v816_1532">
+                    <div class="name">
+                        <label class="label-input"> Nome <input class="campo_cadastro" id="nome"></input></label>
+                    </div>
+                    <div class="name">
+                        <label class="label-input">Email<input class="campo_cadastro"  id="email"></input></label>
+                    </div>
+                    <div class="name">
+                        <label class="label-input">Currículo<input class="campo_cadastro"  id="curriculo"></input></label>
+                    </div>
+                </div>
+                <div class="name">
+                    <button class="button_cadastrar" id="#button-login" onclick="addPerfil($('#nome').val(),false,$('#senha').val(),$('#email').val(),$('#tel').val(),$('#curriculo').val());" ><span class="v816_1547">Cadastrar</span></button>
+                </div>
                 <div class="name"></div>
             </div>
             <div class="v811_567">
