@@ -24,7 +24,7 @@ O sistema consiste em uma plataforma para auxiliar pessoas buscando auxilio com 
 
 ## Diagramas da Arquitetura Hexagonal
 
-Os diagramas estão disponíveis no [link do diagrama] (https://drive.google.com/file/d/17LW5fBlkHttXglqD2yqZNBB1NYVHgrN0/view?usp=sharing)
+Os diagramas estão disponíveis no [link do diagrama](https://drive.google.com/file/d/17LW5fBlkHttXglqD2yqZNBB1NYVHgrN0/view?usp=sharing)
 
 ## Grupo:
 - Bruno Ferreira: Software Engineer Back-End
