@@ -64,23 +64,6 @@ $.ajax({
 });
 
 
-function login(){
-    $.ajax({
-        url: 'http://localhost:3000/login',
-        dataType: 'json',
-        type: 'post',
-        contentType: 'application/json',
-        data: JSON.stringify( { "email": $('#email').val(), "pwd": $('pwd').val() } ),
-        processData: false,
-        success: function( data, textStatus, jQxhr ){
-            $('#button-login').html( JSON.stringify( data ) );
-        },
-        error: function( jqXhr, textStatus, errorThrown ){
-            console.log( errorThrown );
-        }
-    });
-    
-}
 //Cria um perfil
 perfil = {
     "id": 10,

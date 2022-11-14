@@ -23,28 +23,28 @@
                         dados</span></div>
                 <div class="v811_559">
                     <div class="name">
-                        <div class="campo_cadastro"><span class="v816_1552">Telefone</span></div>
+                        <label> Telefone <input class="campo_cadastro"  id="#telefone"></input></label>
                     </div>
                     <div class="name">
-                        <div class="campo_cadastro"><span class="v816_1552">Senha</span></div>
+                        <label >Senha<input class="campo_cadastro"  id="#pwd"></input></label>
                     </div>
                     <div class="name">
-                        <div class="campo_cadastro"><span class="v816_1552">Confirmação Senha</span></div>
+                        <label >Confirmação Senha<input class="campo_cadastro" ></input></label>
                     </div>
                 </div>
                 <div class="v816_1532">
                     <div class="name">
-                        <div class="campo_cadastro"><span class="v816_1552">Nome</span></div>
+                        <label> Nome <input class="campo_cadastro" id="#nome"></input></label>
                     </div>
                     <div class="name">
-                        <div class="campo_cadastro"><span class="v816_1552">Email</span></div>
+                        <label >Email<input class="campo_cadastro"  id="#email"></input></label>
                     </div>
                     <div class="name">
-                        <div class="campo_cadastro"><span class="v816_1552">Endereço</span></div>
+                        <label >Currículo<input class="campo_cadastro"  id="#curriculo"></input></label>
                     </div>
                 </div>
-                <div class="v811_562">
-                    <div class="name"></div><span class="v811_564">Concordo com os termos de uso</span>
+                <div class="name">
+                    <button class="button_cadastrar" id="#button-login" onclick={} ><span class="v816_1547">Cadastrar</span></button>
                 </div>
                 <div class="name"></div>
             </div>
@@ -148,6 +148,22 @@
             position: relative;
             top: 0px;
             left: 0px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            overflow: hidden;
+        }
+
+        .button_cadastrar {
+            width: 146px;
+            height: 52px;
+            background: linear-gradient(rgba(214, 19, 136, 1), rgba(0, 70, 136, 1));
+            padding: 15px 25px;
+            opacity: 1;
+            position: relative;
+            top: 450px;
+            left: 550px;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
             border-bottom-left-radius: 10px;
@@ -280,7 +296,7 @@
 
         .v811_559 {
             width: 552px;
-            height: 198px;
+            height: 300px;
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -294,7 +310,7 @@
 
         .v816_1532 {
             width: 552px;
-            height: 200px;
+            height: 300px;
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
