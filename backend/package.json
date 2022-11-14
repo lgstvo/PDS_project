@@ -1,0 +1,32 @@
+{
+  "name": "backend-pds",
+  "version": "1.0.0",
+  "description": "Backend do projeto prático de PDS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "debug": "node --inspect server.js"
+  },
+  "keywords": [
+    "node",
+    "pds"
+  ],
+  "author": "Luís Gustavo e Bruno Ferreira",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "install": "^0.13.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "pg": "^8.8.0",
+    "postgres": "^3.3.1",
+    "swagger-jsdoc": "^6.2.5",
+    "swagger-ui-express": "^4.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
