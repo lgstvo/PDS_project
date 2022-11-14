@@ -41,7 +41,7 @@ app.use(bodyParser.json())
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PATCH, OPTIONS');
+    res.header('Access-Control-Allow-Methods', '*');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     res.header('Access-Control-Allow-Credentials', true);
     return next();
@@ -57,6 +57,7 @@ app.use((res, req, next) => {
 })
 
 app.use((error, req, res, next) => {
+    console.log(error)
     res.status(error.status || 500)
     res.json({
         error: {
