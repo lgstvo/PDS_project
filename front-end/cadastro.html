@@ -44,31 +44,33 @@
                 </div>
                 <div class="v811_556"><span class="v811_557">Cadastro</span><span class="v811_558">Informe seus
                         dados</span></div>
-                <div class="v811_559">
-                    <div class="name">
-                        <label class="label-input"> Telefone <input class="campo_cadastro"  id="#tel"></input></label>
+                <form action="addPerfil()">
+                    <div class="v811_559">
+                        <div class="name">
+                            <label class="label-input"> Telefone <input class="campo_cadastro"  id="#tel"></input></label>
+                        </div>
+                        <div class="name">
+                            <label class="label-input">Senha<input class="campo_cadastro"  id="#senha"></input></label>
+                        </div>
+                        <div class="name">
+                            <label class="label-input">Confirmação Senha<input class="campo_cadastro" ></input></label>
+                        </div>
+                    </div>
+                    <div class="v816_1532">
+                        <div class="name">
+                            <label class="label-input"> Nome <input class="campo_cadastro" id="#nome"></input></label>
+                        </div>
+                        <div class="name">
+                            <label class="label-input">Email<input class="campo_cadastro"  id="#email"></input></label>
+                        </div>
+                        <div class="name">
+                            <label class="label-input">Currículo<input class="campo_cadastro"  id="#curriculo"></input></label>
+                        </div>
                     </div>
                     <div class="name">
-                        <label class="label-input">Senha<input class="campo_cadastro"  id="#senha"></input></label>
+                        <input type="submit" value="Cadastrar" class="button_cadastrar" id="#button-login"  ><span class="v816_1547">Cadastrar</span></input>
                     </div>
-                    <div class="name">
-                        <label class="label-input">Confirmação Senha<input class="campo_cadastro" ></input></label>
-                    </div>
-                </div>
-                <div class="v816_1532">
-                    <div class="name">
-                        <label class="label-input"> Nome <input class="campo_cadastro" id="#nome"></input></label>
-                    </div>
-                    <div class="name">
-                        <label class="label-input">Email<input class="campo_cadastro"  id="#email"></input></label>
-                    </div>
-                    <div class="name">
-                        <label class="label-input">Currículo<input class="campo_cadastro"  id="#curriculo"></input></label>
-                    </div>
-                </div>
-                <div class="name">
-                    <button class="button_cadastrar" id="#button-login" onclick={addPerfil(nome,true,senha,email,tel,curriculo)} ><span class="v816_1547">Cadastrar</span></button>
-                </div>
+                </form>
                 <div class="name"></div>
             </div>
             <div class="v811_567">

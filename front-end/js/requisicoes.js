@@ -65,22 +65,25 @@ $.ajax({
 
 
 //Cria um perfil
-perfil = {
-    "id": 10,
-    "nome": "string",
-    "isProfessor": true,
-    "pwd": "string",
-    "email": "string",
-    "telefone": 'string'
-  }
-  $.ajax({
-    url: 'http://localhost:3000/perfil', 
-    type: 'POST', 
-    dataType: 'json', 
-    body: perfil,
-    success: function(data) {
-           
-    }, error: function(e) { 
-        alert(e); 
-    }
-});
+function addPerfil(nome, boolProf, senha, email, tel, curriculo){
+    var settings = {
+        "url": "http://localhost:3000/perfil",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "data": JSON.stringify({
+          "nome": nome,
+          "isProfessor": boolProf,
+          "pwd": senha,
+          "email": email,
+          "telefone": tel,
+          "curriculo": curriculo
+        }),
+      };
+      
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+      });
+}
