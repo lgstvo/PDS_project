@@ -22,6 +22,9 @@ O sistema consiste em uma plataforma para auxiliar pessoas buscando auxilio com 
 - Detalhamento: Possuímos na pasta adapters os nossos adaptadores, que servem como meio de comunicação entre as requests que recebemos, e envia as informações relevantes para o nosso adaptador, separados por objeto do domínio (Perfil e Aula). Os adaptadores se comunicam então com as nossas classes de domínio, neste caso chamadas services. Estas contemplam nossas regras de negócio. Quando necessário elas se comunicam com as ports (chamadas de repostiories), partes que implementam as informações do BD, como as queries.
 - Controllers: Foram criados como uma maneira de encapsular a lógica das nossas requisições separadamente da lógica de roteamento das mesmas, para permitir que mudanças feitas no funcionamento do código não afete as rotas.
 
+## Diagramas da Arquitetura Hexagonal
+
+Os diagramas estão disponíveis no [link do diagrama] (https://drive.google.com/file/d/17LW5fBlkHttXglqD2yqZNBB1NYVHgrN0/view?usp=sharing)
 
 ## Grupo:
 - Bruno Ferreira: Software Engineer Back-End
