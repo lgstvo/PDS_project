@@ -113,7 +113,7 @@ const checkAuth = require('../adaptadores/autenticacao-adapter')
  *               items:
  *                 $ref: '#/components/schemas/Perfil'
  */
-router.get('/:id', checkAuth, controller.getPerfil)
+router.get('/:id', controller.getPerfil)
 
 /**
  * @swagger
@@ -131,7 +131,7 @@ router.get('/:id', checkAuth, controller.getPerfil)
  *               items:
  *                 $ref: '#/components/schemas/Perfil'
  */
- router.get('/aulas-marcadas/:id', checkAuth, controller.getAulasMarcadas)
+ router.get('/aulas-marcadas/:id' , controller.getAulasMarcadas)
 
 /**
  * @swagger
@@ -175,7 +175,7 @@ router.post('/', controller.createPerfil)
  *               items:
  *                 $ref: '#/components/schemas/Perfil'
  */
-router.patch('/', checkAuth, controller.updatePerfil)
+router.patch('/', controller.updatePerfil)
 
 /**
  * @swagger
@@ -191,7 +191,7 @@ router.patch('/', checkAuth, controller.updatePerfil)
  *             schema:
  *               $ref: '#/components/schemas/Avaliacao'
  */
-router.get('/avaliacao/:idPerfil', checkAuth, controller.getAvaliacaoPerfil)
+router.get('/avaliacao/:idPerfil',  controller.getAvaliacaoPerfil)
 
 /**
  * @swagger
@@ -207,6 +207,6 @@ router.get('/avaliacao/:idPerfil', checkAuth, controller.getAvaliacaoPerfil)
  *             schema:
  *               $ref: '#/components/schemas/Avaliacao'
  */
-router.post('/avaliacao/:idPerfil', checkAuth, controller.createAvaliacaoPerfil)
+router.post('/avaliacao/:idPerfil',  controller.createAvaliacaoPerfil)
 
 module.exports = router
