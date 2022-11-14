@@ -38,6 +38,22 @@ $(document).ready(function() {
     /* initialize the calendar
     -----------------------------------------------------------------*/
     function criaCalendario(elemento){
+        const eventos = [] 
+        $.ajax({
+            url: 'http://localhost:3000/aula', 
+            type: 'GET', 
+            dataType: 'json', 
+            success: function(data) {
+                $.each(data, function(index, element) {   
+                    $.each(element, function(i, e){
+                        eventos.push({id: e.id, title: e.materia, start: e.dataaula, allDay: true, className: 'info'})  
+                    });
+                });                 
+            }, error: function(e) { 
+                alert(e); 
+            }
+        });
+
         var calendar =  $(elemento).fullCalendar({
             header: {
                 left: '',
@@ -105,22 +121,7 @@ $(document).ready(function() {
 
             },
 
-            events: [
-                {
-                    id: 999,
-                    title: 'Matemática',
-                    start: new Date(y, m, d-3, 16, 0),
-                    allDay: false,
-                    className: 'info'
-                },
-                {
-                    id: 999,
-                    title: 'Matemática',
-                    start: new Date(y, m, d+4, 16, 0),
-                    allDay: false,
-                    className: 'info'
-                }
-            ],
+            events: eventos
         });
         return calendar;
     }
@@ -132,6 +133,5 @@ $(document).ready(function() {
     $("#calendario-menu-inicio h2").addClass("menu-inicio");
     $('#calendario-menu-inicio.fc-button-month.fc-state-default, #calendario-menu-inicio.fc-button-agendaWeek.fc-state-default, #calendario-menu-inicio.fc-button-agendaDay.fc-state-default').addClass('menu-inicio')
     $("#calendario-menu-inicio.fc .fc-header-space").addClass("quebra-linha-inicio");
-    
     
 });
