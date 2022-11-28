@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Home from "./pages/home.js";
 import Header from "./pages/header.js";
 import Login from "./pages/login.js";
+import Cadastro from "./pages/cadastro.js";
 import Footer from "./pages/footer.js";
 import MenuAluno from "./pages/menu-aluno.js";
 
@@ -18,6 +19,7 @@ class App extends Component {
                         <Route exact path="/" element={<><Header/><Home/><Footer/></>}/>
                         <Route path="/login" element={<><Header/><Login/><Footer/></>}/>
                         <Route path="/menu-aluno" element={<><Header/><MenuAluno/><Footer/></>}/>
+                        <Route path="/cadastro" element={<><Header/><Cadastro/><Footer/></>}/>
                         <Route path="/menu-aluno" element={<MenuAluno/>}/>
                     </Routes>
                 </Router>
