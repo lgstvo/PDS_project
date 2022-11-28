@@ -6,6 +6,8 @@ const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const swaggerUI = require('swagger-ui-express')
 const swaggerJsDoc = require('swagger-jsdoc')
+var cors = require("cors");
+var testAPIRouter = require("./routes/testeAPI");
 
 const options = {
     definition: {
@@ -24,7 +26,7 @@ const options = {
 
         servers: [
             {
-                url: "http://localhost:3001",
+                url: "http://localhost:9001",
                 description: "My API Documentation",
             },
         ],
@@ -33,7 +35,9 @@ const options = {
 };
 
 const specs = swaggerJsDoc(options);
+app.use(cors());
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs));
+app.use("/testeAPI", testAPIRouter);
 
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: false }))

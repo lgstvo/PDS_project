@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
     var date = new Date();
     var d = date.getDate();
@@ -126,8 +128,8 @@ $(document).ready(function() {
         return calendar;
     }
     //calendar.updateSize();
-    c_inicio = criaCalendario('#calendario-menu-inicio');
-    c_calendario = criaCalendario('#calendario-menu-calendario');
+    var c_inicio = criaCalendario('#calendario-menu-inicio');
+    var c_calendario = criaCalendario('#calendario-menu-calendario');
     $('#calendario-menu-inicio').fullCalendar('option', 'height', 200);
     $('#calendario-menu-calendario').fullCalendar('option', 'height', 750);
     $("#calendario-menu-inicio h2").addClass("menu-inicio");

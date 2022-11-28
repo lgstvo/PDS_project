@@ -1,0 +1,116 @@
+#external-events {
+    float: left;
+    /*width: 150px;*/
+    width: 25px;
+    padding: 0 10px;
+    text-align: left;
+    }
+
+#external-events h4 {
+    font-size: 8px;
+    margin-top: 0;
+    padding-top: 1em;
+    }
+
+.external-event { /* try to mimick the look of a real event */
+    /*margin: 10px 0;*/
+    padding: 2px 4px;
+    background: #3366CC;
+    color: #fff;
+    font-size: .45em;
+    cursor: pointer;
+    }
+
+#external-events p {
+    margin: 1.5em 0;
+    font-size: 11px;
+    color: #666;
+    }
+
+#external-events p input {
+    margin: 0;
+    vertical-align: middle;
+    }
+
+#calendario-menu-inicio {
+/* 		float: right; */
+ /*   margin: 0 auto;*/
+    width: 300px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px #C3C3C3;
+    }
+#calendario-menu-inicio.fc-button{
+    min-width: 17px !important;
+}
+
+#calendario .fc-header-title h2 {
+    font-weight: bold;
+    color: #fff;
+    font-size: 15px !important;
+}
+.teste {
+    font-weight: bold;
+    font-size: 20px !important;
+}
+
+.foto-aluno{
+    border-radius: "50%";
+}
+
+.card-aulas-prox{
+    max-width: 300px;
+}
+
+a.active{
+    border-color:  rgba(20, 22, 39, 1)!important;
+  }
+  .tab-pane:not(.active) {
+    display: none;
+  }
+  .m-left-5{
+    margin-left: 5% !important;
+  }
+  .m-right-5{
+    margin-right: 5% !important;
+  }
+  
+  .text-gray{
+    color: var(--bs-gray-300) !important;
+  }
+  .bg-primario {
+    background-color: rgba(20, 22, 39, 1) !important; 
+    opacity: 1 !important;
+  }
+  .bg-subprimario {
+    background-color: rgba(37, 43, 66, 1) !important; 
+    opacity: 1 !important;
+  }
+  
+  .bg-secundario{
+    background-color: rgba(209, 243, 102, 1) !important;
+    opacity: 1;
+  }
+  .bg-roxo{
+    background-color: rgba(166, 42, 187, 1) !important;
+    opacity: 1 !important;
+  }
+  
+  .card{
+    border: unset !important;
+  }
+  
+  .botao-nav.active{
+    background-color: rgba(166, 42, 187, 1) !important;
+    opacity: 1 !important;
+    border-color:rgba(0, 0, 0, 0)!important;
+    color: black !important;
+  
+  }
+  .botao-nav{
+    background-color: rgba(61, 50, 113, 1) !important;
+    opacity: 1 !important;
+    border-color:rgba(0, 0, 0, 0)!important;
+    color: var(--bs-gray-600) !important;
+  }
+  

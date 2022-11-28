@@ -1,8 +1,8 @@
 {
     "env":  {
-        "PORT": "3000",
+        "PORT": "9000",
         "JWT_TOKEN": "shhhhh",
-        "BD_PWD": "!Aa34275882",
+        "BD_PWD": "password",
         "BD": "pds",
         "BD_USER": "postgres",
         "BD_HOST": "localhost"
