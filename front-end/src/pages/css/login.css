@@ -95,7 +95,6 @@ body {
     position: absolute;
     top: 129px;
     left: 0px;
-    overflow: hidden;
 }
 
 .name {
@@ -119,7 +118,7 @@ body {
 .v803_599 {
     width: 312px;
     position: absolute;
-    top: 390px;
+    top: 450px;
     left: 122px;
     font-family: Montserrat;
     font-weight: Regular;
@@ -770,7 +769,7 @@ body {
         overflow: hidden;
     }
 
-    .v816_1552 {
+    .email {
         width: 200px;
         color: rgba(0, 0, 0, 1);
         left: 25px;
@@ -781,6 +780,18 @@ body {
         text-align: left;
     }
 
+    .senha {
+        width: 200px;
+        color: rgba(0, 0, 0, 1);
+        left: 25px;
+        font-family: Montserrat;
+        font-weight: Bold;
+        font-size: 18px;
+        opacity: 1;
+        text-align: left;
+        top: 100px;
+    }
+
     .v816_1546 {
         width: 500px;
         height: 52px;
@@ -788,7 +799,7 @@ body {
         padding: 15px 25px;
         opacity: 1;
         position: relative;
-        top: 200px;
+        top: 250px;
         left: 0px;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
