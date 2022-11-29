@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -87,54 +87,54 @@
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const aulaService = <span class="cstat-no" title="statement not covered" >require('../services/aula-service')</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const aulaService = require('../services/aula-service')
 &nbsp;
-<span class="cstat-no" title="statement not covered" >exports.listAula = <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return aulaService.listAula()</span>
+exports.listAula = () =&gt; {
+    return aulaService.listAula()
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >exports.getAula = <span class="fstat-no" title="function not covered" >(i</span>d) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return aulaService.getAula(id)</span>
+exports.getAula = (id) =&gt; {
+    return aulaService.getAula(id)
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >exports.getAulaFilter = <span class="fstat-no" title="function not covered" >(f</span>iltros) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return aulaService.getAulaFilter(filtros)</span>
+exports.getAulaFilter = (filtros) =&gt; {
+    return aulaService.getAulaFilter(filtros)
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >exports.updateAula = <span class="fstat-no" title="function not covered" >(a</span>ula) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return aulaService.updateAula(aula)</span>
+exports.updateAula = (aula) =&gt; {
+    return aulaService.updateAula(aula)
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >exports.createAula = <span class="fstat-no" title="function not covered" >(a</span>ula) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return aulaService.createAula(aula)</span>
+exports.createAula = (aula) =&gt; {
+    return aulaService.createAula(aula)
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >exports.marcarAula = <span class="fstat-no" title="function not covered" >(m</span>arcacao) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return aulaService.marcarAula(marcacao)</span>
+exports.marcarAula = (marcacao) =&gt; {
+    return aulaService.marcarAula(marcacao)
 }</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -142,7 +142,11 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+<<<<<<< HEAD
                 at 2022-11-29T01:43:49.896Z
+=======
+                at 2022-11-29T01:55:51.752Z
+>>>>>>> 8bb6c287c995060358b4bf53e5200de93e635793
             </div>
         <script src="../prettify.js"></script>
         <script>

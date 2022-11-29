@@ -1,74 +1,76 @@
-import perfilService from '../../services/perfil';
-import perfilAdapter from '../../adaptadores/perfil-adapter'
+import aulaService from '../../services/aula-service';
+import aulaAdapter from '../../adaptadores/aula-adapter'
 
-perfilService.login = jest.fn()
-perfilService.createPerfil = jest.fn()
-perfilService.getPerfil = jest.fn()
-perfilService.getAulasMarcadas = jest.fn()
-perfilService.updatePerfil = jest.fn()
-perfilService.createAvaliacao = jest.fn()
-perfilService.getAvaliacaoPerfil = jest.fn()
+aulaService.createAula = jest.fn()
+aulaService.updateAula = jest.fn()
+aulaService.listAula = jest.fn()
+aulaService.getAula = jest.fn()
+aulaService.marcarAula = jest.fn()
+aulaService.getAulaFilter = jest.fn()
 
-test('Test Login', () =>{
-    perfilAdapter.login({})
-    expect(perfilService.login).toHaveBeenCalled()
+test('Test Create Aula', () => {
+    aulaService.createAula.mockReturnValueOnce(1)
+    var id = aulaAdapter.createAula({})
+    expect(id).toBe(1)
 });
 
-test('Test Get Perfil', () =>{
-    perfilAdapter.getPerfil({})
-    expect(perfilService.getPerfil).toHaveBeenCalled()
+test('Test Update Aula', () => {
+    aulaAdapter.updateAula({})
+    expect(aulaService.updateAula).toHaveBeenCalled()
 });
 
-test('Test Get Aulas Marcadas', () =>{
-    perfilAdapter.getAulasMarcadas({})
-    expect(perfilService.getAulasMarcadas).toHaveBeenCalled()
+test('Test Marcar Aula', () => {
+    aulaAdapter.marcarAula({})
+    expect(aulaService.marcarAula).toHaveBeenCalled()
 });
 
-test('Test Create Perfil', () =>{
-    perfilAdapter.createPerfil({})
-    expect(perfilService.createPerfil).toHaveBeenCalled()
+test('Test List Aulas', () => {
+    var mockAulas = {
+        result: [
+            {
+                id: 1,
+                dataAula: "00:00:00 17-12-2022",
+                professor: "Pedro"
+            },
+            {
+                id: 2,
+                dataAula: "00:00:00 17-12-2022",
+                professor: "Pedro"
+            }
+        ]
+    };
+    aulaService.listAula.mockReturnValueOnce(mockAulas)
+    var aulas = aulaAdapter.listAula({})
+    expect(aulas).toBe(mockAulas)
 });
 
-test('Test Update Perfil', () =>{
-    perfilAdapter.updatePerfil({})
-    expect(perfilService.updatePerfil).toHaveBeenCalled()
+test('Test Update Aula', () => {
+    var aula = {
+        id: 1,
+        dataAula: "00:00:00 17-12-2022",
+        professor: "Pedro"
+    };
+    aulaService.getAula.mockReturnValueOnce(aula)
+    var aulaReturned = aulaAdapter.getAula(1)
+    expect(aulaReturned).toBe(aula)
 });
 
-test('Test Get Avaliacao Perfil', () =>{
-    perfilAdapter.getAvaliacaoPerfil({})
-    expect(perfilService.getAvaliacaoPerfil).toHaveBeenCalled()
-});
-
-test('Test Create Avaliacao', () =>{
-    perfilAdapter.createAvaliacao({})
-    expect(perfilService.createAvaliacao).toHaveBeenCalled()
-});
-
-test('Test Calculate Avaliacao', () =>{
-    var mockAvaliacoes = [{
-        notaclaridade: 5,
-        notapontualidade: 5,
-        notasimplicidade:5
-    },
-    {
-        notaclaridade: 4,
-        notapontualidade: 4,
-        notasimplicidade:4
-    },
-    {
-        notaclaridade: 3,
-        notapontualidade: 3,
-        notasimplicidade:3
-    }]
-
-    var expectedReturn = {
-        notaClareza: 4,
-        notaSimplicidade: 4,
-        notaPontualidade: 4,
-    }
-    
-    var acturalReturn = perfilAdapter.calculateAvaliacao(mockAvaliacoes, 3)
-
-    expect(expectedReturn).toBe(acturalReturn)
-
+test('Test List Aulas', () => {
+    var mockAulas = {
+        result: [
+            {
+                id: 1,
+                dataAula: "00:00:00 17-12-2022",
+                professor: "Pedro"
+            },
+            {
+                id: 2,
+                dataAula: "00:00:00 17-12-2022",
+                professor: "Pedro"
+            }
+        ]
+    };
+    aulaService.getAulaFilter.mockReturnValueOnce(mockAulas)
+    var aulas = aulaAdapter.getAulaFilter({})
+    expect(aulas).toBe(mockAulas)
 });
