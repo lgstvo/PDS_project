@@ -13,7 +13,7 @@
       "^.+\\.[t|j]sx?$": "babel-jest"
     },
     "collectCoverage": true,
-    "collectCoverageFrom": ["./**/*.{js,jsx}"]
+    "collectCoverageFrom": ["./services/*.{js,jsx}" , "./adaptadores/*.{js,jsx}" , "./repositories/*.{js,jsx}"]
   },
   "keywords": [
     "node",

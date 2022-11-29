@@ -15,26 +15,62 @@ test('Test Create Aula', () => {
 });
 
 test('Test Update Aula', () => {
-    var id = aulaService.updateAula({})
+    aulaService.updateAula({})
     expect(aulaRepo.updateAula).toHaveBeenCalled()
 });
 
-test('Test Update Aula', () => {
-    var id = aulaService.updateAula({})
-    expect(aulaRepo.updateAula).toHaveBeenCalled()
+test('Test Marcar Aula', () => {
+    aulaService.marcarAula({})
+    expect(aulaRepo.marcarAula).toHaveBeenCalled()
+});
+
+test('Test List Aulas', () => {
+    var mockAulas = {
+        result: [
+            {
+                id: 1,
+                dataAula: "00:00:00 17-12-2022",
+                professor: "Pedro"
+            },
+            {
+                id: 2,
+                dataAula: "00:00:00 17-12-2022",
+                professor: "Pedro"
+            }
+        ]
+    };
+    aulaRepo.listAula.mockReturnValueOnce(mockAulas)
+    var aulas = aulaService.listAula({})
+    expect(aulas).toBe(mockAulas)
 });
 
 test('Test Update Aula', () => {
-    var id = aulaService.updateAula({})
-    expect(aulaRepo.updateAula).toHaveBeenCalled()
+    var aula = {
+        id: 1,
+        dataAula: "00:00:00 17-12-2022",
+        professor: "Pedro"
+    };
+    aulaRepo.getAula.mockReturnValueOnce(aula)
+    var aulaReturned = aulaService.getAula(1)
+    expect(aulaReturned).toBe(aula)
 });
 
-test('Test Update Aula', () => {
-    var id = aulaService.updateAula({})
-    expect(aulaRepo.updateAula).toHaveBeenCalled()
-});
-
-test('Test Update Aula', () => {
-    var id = aulaService.updateAula({})
-    expect(aulaRepo.updateAula).toHaveBeenCalled()
+test('Test List Aulas', () => {
+    var mockAulas = {
+        result: [
+            {
+                id: 1,
+                dataAula: "00:00:00 17-12-2022",
+                professor: "Pedro"
+            },
+            {
+                id: 2,
+                dataAula: "00:00:00 17-12-2022",
+                professor: "Pedro"
+            }
+        ]
+    };
+    aulaRepo.getAulaFilter.mockReturnValueOnce(mockAulas)
+    var aulas = aulaService.getAulaFilter({})
+    expect(aulas).toBe(mockAulas)
 });
