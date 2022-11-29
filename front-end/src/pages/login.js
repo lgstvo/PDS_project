@@ -9,10 +9,10 @@ class Login extends React.Component{
                 <div className="v803_589"><span className="v803_590">Sign In</span><span className="v803_591">Digite seu email e senha para entrar</span></div>
                 <div className="v803_592">
                     <div className="name">
-                        <label  className="v816_1552">Email <input type="text" className="campo_login" id="#email" name="Email" /></label>
+                        <label  className="email">Email <input type="text" className="campo_login" id="#email" name="Email" /></label>
                     </div>
                     <div className="name">
-                        <label  className="v816_1552">Senha <input type="text" className="campo_login" id="#pwd" name="Senha" /></label>
+                        <label  className="senha">Senha <input type="text" className="campo_login" id="#pwd" name="Senha" /></label>
                     </div>
                 </div>
                 <div className="v803_595">
