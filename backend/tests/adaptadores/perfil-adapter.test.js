@@ -1,4 +1,4 @@
-import perfilService from '../../services/perfil';
+import perfilService from '../../services/perfil-service';
 import perfilAdapter from '../../adaptadores/perfil-adapter'
 
 perfilService.login = jest.fn()
@@ -69,6 +69,7 @@ test('Test Calculate Avaliacao', () =>{
     
     var acturalReturn = perfilAdapter.calculateAvaliacao(mockAvaliacoes, 3)
 
-    expect(expectedReturn).toBe(acturalReturn)
-
+    expect(expectedReturn.notaClareza).toBe(acturalReturn.notaClareza)
+    expect(expectedReturn.notaSimplicidade).toBe(acturalReturn.notaSimplicidade)
+    expect(expectedReturn.notaPontualidade).toBe(acturalReturn.notaPontualidade)
 });

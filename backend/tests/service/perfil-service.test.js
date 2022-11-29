@@ -69,6 +69,8 @@ test('Test Calculate Avaliacao', () =>{
     
     var acturalReturn = perfilService.calculateAvaliacao(mockAvaliacoes, 3)
 
-    expect(expectedReturn).toBe(acturalReturn)
+    expect(expectedReturn.notaClareza).toBe(acturalReturn.notaClareza)
+    expect(expectedReturn.notaSimplicidade).toBe(acturalReturn.notaSimplicidade)
+    expect(expectedReturn.notaPontualidade).toBe(acturalReturn.notaPontualidade)
 
 });

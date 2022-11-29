@@ -1,31 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<coverage generated="1669686229914" clover="3.2.0">
-  <project timestamp="1669686229914" name="All files">
-    <metrics statements="155" coveredstatements="20" conditionals="46" coveredconditionals="0" methods="53" coveredmethods="6" elements="254" coveredelements="26" complexity="0" loc="155" ncloc="155" packages="3" files="8" classes="8"/>
+<coverage generated="1669688293304" clover="3.2.0">
+  <project timestamp="1669688293304" name="All files">
+    <metrics statements="155" coveredstatements="110" conditionals="46" coveredconditionals="31" methods="53" coveredmethods="39" elements="254" coveredelements="180" complexity="0" loc="155" ncloc="155" packages="3" files="8" classes="8"/>
     <package name="adaptadores">
-      <metrics statements="35" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="16" coveredmethods="0"/>
-      <file name="aula-adapter.js" path="/home/luis/Documents/git_rep/PDS_project/backend/adaptadores/aula-adapter.js">
-        <metrics statements="13" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-=======
-<coverage generated="1669686951774" clover="3.2.0">
-  <project timestamp="1669686951774" name="All files">
-    <metrics statements="155" coveredstatements="57" conditionals="46" coveredconditionals="28" methods="53" coveredmethods="22" elements="254" coveredelements="107" complexity="0" loc="155" ncloc="155" packages="3" files="8" classes="8"/>
-    <package name="adaptadores">
-      <metrics statements="35" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="16" coveredmethods="6"/>
+      <metrics statements="35" coveredstatements="31" conditionals="0" coveredconditionals="0" methods="16" coveredmethods="14"/>
       <file name="aula-adapter.js" path="E:\Facul\PDS\PDS_project\PDS_project\backend\adaptadores\aula-adapter.js">
         <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
         <line num="1" count="1" type="stmt"/>
@@ -41,75 +19,38 @@
         <line num="20" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
->>>>>>> 8bb6c287c995060358b4bf53e5200de93e635793
       </file>
-      <file name="autenticacao-adapter.js" path="/home/luis/Documents/git_rep/PDS_project/backend/adaptadores/autenticacao-adapter.js">
+      <file name="autenticacao-adapter.js" path="E:\Facul\PDS\PDS_project\PDS_project\backend\adaptadores\autenticacao-adapter.js">
         <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
       </file>
-      <file name="perfil-adapter.js" path="/home/luis/Documents/git_rep/PDS_project/backend/adaptadores/perfil-adapter.js">
-        <metrics statements="19" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
+      <file name="perfil-adapter.js" path="E:\Facul\PDS\PDS_project\PDS_project\backend\adaptadores\perfil-adapter.js">
+        <metrics statements="19" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="8"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
       </file>
     </package>
     <package name="repositories">
-<<<<<<< HEAD
-      <metrics statements="66" coveredstatements="7" conditionals="36" coveredconditionals="0" methods="19" coveredmethods="0"/>
-      <file name="aula.js" path="/home/luis/Documents/git_rep/PDS_project/backend/repositories/aula.js">
-        <metrics statements="31" coveredstatements="7" conditionals="28" coveredconditionals="0" methods="10" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="14" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="40" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="47" count="0" type="cond" truecount="0" falsecount="5"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="54" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="55" count="0" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="61" count="0" type="cond" truecount="0" falsecount="5"/>
-        <line num="62" count="0" type="stmt"/>
-        <line num="64" count="0" type="stmt"/>
-=======
-      <metrics statements="66" coveredstatements="31" conditionals="36" coveredconditionals="28" methods="19" coveredmethods="10"/>
+      <metrics statements="66" coveredstatements="39" conditionals="36" coveredconditionals="28" methods="19" coveredmethods="10"/>
       <file name="aula.js" path="E:\Facul\PDS\PDS_project\PDS_project\backend\repositories\aula.js">
         <metrics statements="31" coveredstatements="31" conditionals="28" coveredconditionals="28" methods="10" coveredmethods="10"/>
         <line num="1" count="3" type="stmt"/>
@@ -143,32 +84,31 @@
         <line num="61" count="6" type="cond" truecount="5" falsecount="0"/>
         <line num="62" count="2" type="stmt"/>
         <line num="64" count="4" type="stmt"/>
->>>>>>> 8bb6c287c995060358b4bf53e5200de93e635793
       </file>
-      <file name="perfil.js" path="/home/luis/Documents/git_rep/PDS_project/backend/repositories/perfil.js">
-        <metrics statements="35" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="9" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
+      <file name="perfil.js" path="E:\Facul\PDS\PDS_project\PDS_project\backend\repositories\perfil.js">
+        <metrics statements="35" coveredstatements="8" conditionals="8" coveredconditionals="0" methods="9" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
         <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="20" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
         <line num="27" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="28" count="0" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
         <line num="40" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
@@ -185,8 +125,8 @@
       </file>
     </package>
     <package name="services">
-      <metrics statements="54" coveredstatements="13" conditionals="10" coveredconditionals="0" methods="18" coveredmethods="6"/>
-      <file name="aula-service.js" path="/home/luis/Documents/git_rep/PDS_project/backend/services/aula-service.js">
+      <metrics statements="54" coveredstatements="40" conditionals="10" coveredconditionals="3" methods="18" coveredmethods="15"/>
+      <file name="aula-service.js" path="E:\Facul\PDS\PDS_project\PDS_project\backend\services\aula-service.js">
         <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -202,7 +142,7 @@
         <line num="23" count="2" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
       </file>
-      <file name="autenticacao-service.js" path="/home/luis/Documents/git_rep/PDS_project/backend/services/autenticacao-service.js">
+      <file name="autenticacao-service.js" path="E:\Facul\PDS\PDS_project\PDS_project\backend\services\autenticacao-service.js">
         <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -212,26 +152,26 @@
         <line num="8" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
       </file>
-      <file name="perfil-service.js" path="/home/luis/Documents/git_rep/PDS_project/backend/services/perfil-service.js">
-        <metrics statements="34" coveredstatements="0" conditionals="10" coveredconditionals="0" methods="11" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
+      <file name="perfil-service.js" path="E:\Facul\PDS\PDS_project\PDS_project\backend\services\perfil-service.js">
+        <metrics statements="34" coveredstatements="27" conditionals="10" coveredconditionals="3" methods="11" coveredmethods="9"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
         <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="36" count="0" type="stmt"/>
@@ -239,15 +179,15 @@
         <line num="42" count="0" type="stmt"/>
         <line num="48" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="61" count="0" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
-        <line num="63" count="0" type="stmt"/>
-        <line num="64" count="0" type="stmt"/>
-        <line num="65" count="0" type="stmt"/>
-        <line num="66" count="0" type="stmt"/>
-        <line num="69" count="0" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
+        <line num="60" count="2" type="stmt"/>
+        <line num="61" count="2" type="stmt"/>
+        <line num="62" count="2" type="stmt"/>
+        <line num="63" count="2" type="stmt"/>
+        <line num="64" count="6" type="stmt"/>
+        <line num="65" count="6" type="stmt"/>
+        <line num="66" count="6" type="stmt"/>
+        <line num="69" count="2" type="stmt"/>
       </file>
     </package>
   </project>
