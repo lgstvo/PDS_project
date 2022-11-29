@@ -1,5 +1,5 @@
 TN:
-SF:adaptadores\aula-adapter.js
+SF:adaptadores/aula-adapter.js
 FN:3,(anonymous_0)
 FN:7,(anonymous_1)
 FN:11,(anonymous_2)
@@ -33,7 +33,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:adaptadores\autenticacao-adapter.js
+SF:adaptadores/autenticacao-adapter.js
 FN:3,(anonymous_0)
 FNF:1
 FNH:0
@@ -47,7 +47,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:adaptadores\perfil-adapter.js
+SF:adaptadores/perfil-adapter.js
 FN:3,(anonymous_0)
 FN:7,(anonymous_1)
 FN:11,(anonymous_2)
@@ -93,7 +93,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:repositories\aula.js
+SF:repositories/aula.js
 FN:3,(anonymous_0)
 FN:8,(anonymous_1)
 FN:13,(anonymous_2)
@@ -181,7 +181,7 @@ BRF:28
 BRH:0
 end_of_record
 TN:
-SF:repositories\perfil.js
+SF:repositories/perfil.js
 FN:3,(anonymous_0)
 FN:8,(anonymous_1)
 FN:13,(anonymous_2)
@@ -251,7 +251,7 @@ BRF:8
 BRH:0
 end_of_record
 TN:
-SF:services\aula-service.js
+SF:services/aula-service.js
 FN:3,(anonymous_0)
 FN:7,(anonymous_1)
 FN:11,(anonymous_2)
@@ -285,7 +285,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:services\autenticacao-service.js
+SF:services/autenticacao-service.js
 FN:3,(anonymous_0)
 FNF:1
 FNH:0
@@ -303,7 +303,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:services\perfil-service.js
+SF:services/perfil-service.js
 FN:5,(anonymous_0)
 FN:9,(anonymous_1)
 FN:13,(anonymous_2)
