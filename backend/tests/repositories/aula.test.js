@@ -49,7 +49,7 @@ test('Test Update Aula', () => {
     expect(database.query).toHaveBeenCalled()
 });
 
-test('Test List Aulas', () => {
+test('Test List Aulas Filter Materia', () => {
     var mockAulas = {
         result: [
             {
@@ -65,6 +65,121 @@ test('Test List Aulas', () => {
         ]
     };
     database.query.mockReturnValueOnce(mockAulas)
-    var aulas = repositories.getAulaFilter({})
+    var aulas = repositories.getAulaFilter({
+        materia: 'Portugues'
+    })
+    expect(database.query).toHaveBeenCalled()
+});
+
+test('Test List Aulas Filter Professor', () => {
+    var mockAulas = {
+        result: [
+            {
+                id: 1,
+                dataAula: "00:00:00 17-12-2022",
+                professor: "Pedro"
+            },
+            {
+                id: 2,
+                dataAula: "00:00:00 17-12-2022",
+                professor: "Pedro"
+            }
+        ]
+    };
+    database.query.mockReturnValueOnce(mockAulas)
+    var aulas = repositories.getAulaFilter({
+        professor: 'Portugues'
+    })
+    expect(database.query).toHaveBeenCalled()
+});
+
+test('Test List Aulas Filter Data', () => {
+    var mockAulas = {
+        result: [
+            {
+                id: 1,
+                dataAula: "00:00:00 17-12-2022",
+                professor: "Pedro"
+            },
+            {
+                id: 2,
+                dataAula: "00:00:00 17-12-2022",
+                professor: "Pedro"
+            }
+        ]
+    };
+    database.query.mockReturnValueOnce(mockAulas)
+    var aulas = repositories.getAulaFilter({
+        dataAula: '00:00:00 17-12-2022'
+    })
+    expect(database.query).toHaveBeenCalled()
+});
+
+test('Test List Aulas Filter Materia Professor', () => {
+    var mockAulas = {
+        result: [
+            {
+                id: 1,
+                dataAula: "00:00:00 17-12-2022",
+                professor: "Pedro"
+            },
+            {
+                id: 2,
+                dataAula: "00:00:00 17-12-2022",
+                professor: "Pedro"
+            }
+        ]
+    };
+    database.query.mockReturnValueOnce(mockAulas)
+    var aulas = repositories.getAulaFilter({
+        materia: 'Portugues',
+        professor: 'Luis'
+    })
+    expect(database.query).toHaveBeenCalled()
+});
+
+test('Test List Aulas Filter Materia Data Aula', () => {
+    var mockAulas = {
+        result: [
+            {
+                id: 1,
+                dataAula: "00:00:00 17-12-2022",
+                professor: "Pedro"
+            },
+            {
+                id: 2,
+                dataAula: "00:00:00 17-12-2022",
+                professor: "Pedro"
+            }
+        ]
+    };
+    database.query.mockReturnValueOnce(mockAulas)
+    var aulas = repositories.getAulaFilter({
+        materia: 'Portugues',
+        dataAula: '00:00:00 17-12-2022'
+    })
+    expect(database.query).toHaveBeenCalled()
+});
+
+test('Test List Aulas Filter Professor Data Aula', () => {
+    var mockAulas = {
+        result: [
+            {
+                id: 1,
+                dataAula: "00:00:00 17-12-2022",
+                professor: "Pedro"
+            },
+            {
+                id: 2,
+                dataAula: "00:00:00 17-12-2022",
+                professor: "Pedro"
+            }
+        ]
+    };
+    database.query.mockReturnValueOnce(mockAulas)
+    var aulas = repositories.getAulaFilter({
+        professor: 'Portugues',
+        dataAula: '00:00:00 17-12-2022'
+    })
     expect(database.query).toHaveBeenCalled()
 });
