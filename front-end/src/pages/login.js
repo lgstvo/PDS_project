@@ -1,25 +1,77 @@
 import React from "react";
 import "./css/login.css"
+import Form from 'react-bootstrap/Form';
+
+function redirect() {
+    window.location.href = 'http://localhost:3000/menu-aluno';
+}
+
+function erroLogin(){
+    alert('Email ou senha incorretos')
+    //$('#erro.v803_595').append("<div class='invalid-feedback'>Email ou senha invalidos</div>")
+}
+
+function loginRequest(email, senha){
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    
+    var raw = JSON.stringify({
+      "email": email,
+      "pwd": senha
+    });
+    
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+    
+    fetch("http://localhost:9000/perfil/login", requestOptions)
+      .then(response => response.json())
+      .then(result => {
+        if(result.message == 'Autenticacao Sucesso'){
+            redirect()
+        }else{
+            //alert(result.message)
+            erroLogin()
+        }
+    })
+      .catch(error => console.log('error', error)); 
+}
+
+
+const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const email_form = event.target.elements[0].value;
+    const senha_form = event.target.elements[1].value;
+    loginRequest(email_form, senha_form);
+};
 
 class Login extends React.Component{
     render(){
+        
         return (
             <div className="v803_586">
             <div className="v803_588">
                 <div className="v803_589"><span className="v803_590">Sign In</span><span className="v803_591">Digite seu email e senha para entrar</span></div>
-                <div className="v803_592">
-                    <div className="name">
-                        <input type="text" className="campo_login" id="#email" name="Email" placeholder="Email"/>
-                    </div><br></br>
-                    <div className="name">
-                        <input type="password" className="campo_login" id="#pwd" name="Senha" placeholder="Senha"/>
+                <Form onSubmit={handleSubmit}>
+                    <div className="v803_592">    
+                        <div className="name">
+                            <input type="text" className="campo_login" id="email" name="Email" placeholder="Email"/>
+                        </div><br></br>
+                        <div className="name">
+                            <input type="password" className="campo_login" id="pwd" name="Senha" placeholder="Senha"/>
+                        </div>
                     </div>
-                </div>
-                <div className="v803_595">
-                </div>
-                <div className="name">
-                    <button className="v816_1546" id="#button-login" ><span className="v816_1547">Login</span></button>
-                </div><span className="v803_599 text-white">Ainda não se cadastrou? <a href="cadastro">Criar conta</a></span>
+                    <div className="v803_595" id="erro">
+                    </div>
+                    <div className="name">
+                        <button className="v816_1546" id="button-login" type="submit"><span className="v816_1547">Login</span></button>
+                    </div>
+                </Form>
+                <span className="v803_599 text-white">Ainda não se cadastrou? <a href="cadastro">Criar conta</a></span>
             </div>
             <div className="v803_614">
                 <div className="v803_615">
