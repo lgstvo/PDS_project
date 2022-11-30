@@ -88,6 +88,7 @@ function FormExample() {
                 <InputGroup hasValidation>
                 <InputGroup.Text id="inputGroupPrepend">+55</InputGroup.Text>
                 <Form.Control
+                name = "formTelefone"
                     type="text"
                     placeholder="Telefone"
                     aria-describedby="inputGroupPrepend"
@@ -99,7 +100,7 @@ function FormExample() {
                 </InputGroup>
             </Form.Group>
           <Form.Group as={Col} md="4" controlId="formEmail">
-            <Form.Control type="text" placeholder="Email" required />
+            <Form.Control name="formEmail" type="text" placeholder="Email" required />
             <Form.Control.Feedback type="invalid">
               Por favor, informe um email válido
             </Form.Control.Feedback>
@@ -109,13 +110,13 @@ function FormExample() {
         <br></br>
         <Row className="h-100 justify-content-center align-items-center">
         <Form.Group as={Col} md="4" controlId="formSenha">
-            <Form.Control type="password" placeholder="Senha" required />
+            <Form.Control name="formSenha" type="password" placeholder="Senha" required />
             <Form.Control.Feedback type="invalid">
               Por favor, informe uma senha válida.
             </Form.Control.Feedback>
           </Form.Group>
           <Form.Group as={Col} md="4" controlId="formSenhaConfirm">
-            <Form.Control type="password" placeholder="Confirmar senha" required />
+            <Form.Control name="formSenhaConfirm" type="password" placeholder="Confirmar senha" required />
             <Form.Control.Feedback type="invalid">
               As senhas informadas precisam ser iguais!
             </Form.Control.Feedback>
@@ -125,14 +126,14 @@ function FormExample() {
         <Row className="h-100 justify-content-center align-items-center">
             
             <Form.Group as={Col} md="4" controlId="formTipo">
-                <Form.Select defaultValue="Sou aluno">
+                <Form.Select name="formTipo" defaultValue="Sou aluno">
                     <option value="false">Sou aluno</option>
                     <option value="true">Sou professor</option>
                 </Form.Select>
                 
             </Form.Group>
             <Form.Group as={Col} md="4" controlId="formCurriculo">
-                <Form.Control type="text" placeholder="Linkedin (opcional)" />
+                <Form.Control name="formCurriculo" type="text" placeholder="Linkedin (opcional)" />
           </Form.Group>
         </Row>
             <br></br>
@@ -140,6 +141,7 @@ function FormExample() {
                 <Col className="mx-auto d-flex text-center mx-auto">
                     <Form.Group className="mb-3 justify-content-center align-items-center mx-auto">
                     <Form.Check
+                    name="formTerm"
                         required
                         label="Aceito os termos de uso"
                         feedback="Você deve aceitar os termos de uso."
@@ -152,7 +154,7 @@ function FormExample() {
         <br></br>
         <Row className="justify-content-center align-items-center">
             <Col className="mx-auto text-center">
-                <Button className="button_cadastrar align-center mx-auto btn-lg" type="submit">Cadastrar</Button>
+                <Button name="cadastrar" className="button_cadastrar align-center mx-auto btn-lg" type="submit">Cadastrar</Button>
             </Col>
         </Row>
         <br></br>

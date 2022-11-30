@@ -22,7 +22,7 @@ class Header extends React.Component{
           </Nav>
           <Nav>
             <Nav.Link href="login">Entrar</Nav.Link>
-            <Nav.Link eventKey={2} href="cadastro">
+            <Nav.Link eventKey={2} name="navCadastro" href="cadastro">
               Cadastro
             </Nav.Link>
           </Nav>

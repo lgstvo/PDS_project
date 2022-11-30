@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "selenium-webdriver": "^4.6.1"
+  },
+  "babel": {
+    "plugins": [
+      "transform-es2015-parameters",
+      "transform-es2015-modules-commonjs",
+      "transform-es2015-shorthand-properties",
+      "transform-es2015-spread",
+      "transform-object-rest-spread"
+    ]
+  }
+}
