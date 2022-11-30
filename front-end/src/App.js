@@ -5,6 +5,7 @@ import Login from "./pages/login.js";
 import Cadastro from "./pages/cadastro.js";
 import Footer from "./pages/footer.js";
 import MenuAluno from "./pages/menu-aluno.js";
+import MenuProfessor from "./pages/menu-professor.js";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -20,6 +21,7 @@ class App extends Component {
                         <Route path="/login" element={<><Header/><Login/><Footer/></>}/>
                         <Route path="/cadastro" element={<><Header/><Cadastro/><Footer/></>}/>
                         <Route path="/menu-aluno" element={<MenuAluno/>}/>
+                        <Route path="/menu-professor" element={<MenuProfessor/>}/>
                     </Routes>
                 </Router>
                 
@@ -27,33 +29,7 @@ class App extends Component {
             
         );
     }
-    /*    constructor(props) {
-        super(props);
-        this.state = { apiResponse: "" };
-    }
 
-    callAPI() {
-        fetch("http://localhost:9000/testeAPI")
-            .then(res => res.text())
-            .then(res => this.setState({ apiResponse: res }))
-            .catch(err => err);
-    }
-
-    componentDidMount() {
-        this.callAPI();
-    }
-
-    render() {
-        return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h1 className="App-title">Welcome to React</h1>
-                </header>
-                <p className="App-intro">{this.state.apiResponse}</p>
-            </div>
-        );
-    }*/
 }
 
 export default App;
