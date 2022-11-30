@@ -13,7 +13,7 @@ jobs:
     strategy:
       max-parallel: 24
       matrix:
-        os: [windows-latest]
+        os: [ubuntu-latest]
         node-version: [18.x]
 
     steps:
