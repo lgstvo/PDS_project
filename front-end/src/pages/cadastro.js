@@ -1,75 +1,164 @@
-import React from "react";
+import React, { useState }  from "react";
 import "./css/cadastro.css"
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Row from 'react-bootstrap/Row';
+import Card from 'react-bootstrap/Card';
+import $ from 'jquery';
 
+function FormExample() {
+    const [validated, setValidated] = useState(false);
+
+    function cadastraPerfil(nome, boolProf, senha, email, tel, curriculo){
+        var settings = {
+            "url": "http://localhost:9000/perfil",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "data": JSON.stringify({
+              "nome": nome,
+              "isProfessor": boolProf,
+              "pwd": senha,
+              "email": email,
+              "telefone": tel,
+              "curriculo": curriculo
+            }),
+          };
+          
+          $.ajax(settings).done(function (response) {
+            alert(response);
+            console.log(response);
+        });
+    };
+  
+    const handleSubmit = (event) => {
+      const form = event.currentTarget;
+      if (form.checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropagation();
+      }else{
+        const nome = event.target.elements[0].value;
+        const tipo = event.target.elements[1].value;
+        const senha = event.target.elements[2].value;
+        const email = event.target.elements[3].value;
+        const telefone = event.target.elements[4].value;
+        const curriculo = event.target.elements[5].value;
+      
+        cadastraPerfil(nome,tipo, senha,email, telefone, curriculo);
+      
+    }
+      setValidated(true);
+      
+    };
+  
+    return (
+      <Form noValidate validated={validated} onSubmit={handleSubmit} >
+        <Row className="mb-2 h-100 justify-content-center align-items-center">
+          <Form.Group as={Col} md="8" controlId="formNome">
+            <Form.Control //name="formName"
+              required
+              type="text"
+              placeholder="Nome completo"
+            />
+            <Form.Control.Feedback type="invalid">Por favor, informe um nome válido.</Form.Control.Feedback>
+          </Form.Group>
+          
+        </Row>
+        <br></br>
+        <Row className="mb-3 h-100 justify-content-center align-items-center">
+            <Form.Group as={Col} md="4" controlId="formTelefone">
+                <InputGroup hasValidation>
+                <InputGroup.Text id="inputGroupPrepend">+55</InputGroup.Text>
+                <Form.Control
+                    type="text"
+                    placeholder="Telefone"
+                    aria-describedby="inputGroupPrepend"
+                    required
+                />
+                <Form.Control.Feedback type="invalid">
+                    Por favor, informe um telefone.
+                </Form.Control.Feedback>
+                </InputGroup>
+            </Form.Group>
+          <Form.Group as={Col} md="4" controlId="formEmail">
+            <Form.Control type="text" placeholder="Email" required />
+            <Form.Control.Feedback type="invalid">
+              Por favor, informe um email válido
+            </Form.Control.Feedback>
+          </Form.Group>
+          
+        </Row>
+        <br></br>
+        <Row className="h-100 justify-content-center align-items-center">
+        <Form.Group as={Col} md="4" controlId="formSenha">
+            <Form.Control type="password" placeholder="Senha" required />
+            <Form.Control.Feedback type="invalid">
+              Por favor, informe uma senha válida.
+            </Form.Control.Feedback>
+          </Form.Group>
+          <Form.Group as={Col} md="4" controlId="formSenhaConfirm">
+            <Form.Control type="password" placeholder="Confirmar senha" required />
+            <Form.Control.Feedback type="invalid">
+              As senhas informadas precisam ser iguais!
+            </Form.Control.Feedback>
+          </Form.Group>
+        </Row>
+        <br></br>
+        <Row className="h-100 justify-content-center align-items-center">
+            
+            <Form.Group as={Col} md="4" controlId="formTipo">
+                <Form.Select defaultValue="Sou aluno">
+                    <option value="false">Sou aluno</option>
+                    <option value="true">Sou professor</option>
+                </Form.Select>
+                
+            </Form.Group>
+            <Form.Group as={Col} md="4" controlId="formCurriculo">
+                <Form.Control type="text" placeholder="Linkedin (opcional)" />
+          </Form.Group>
+        </Row>
+            <br></br>
+        <Row className="justify-content-center align-items-center">
+                <Col className="mx-auto d-flex text-center mx-auto">
+                    <Form.Group className="mb-3 justify-content-center align-items-center mx-auto">
+                    <Form.Check
+                        required
+                        label="Aceito os termos de uso"
+                        feedback="Você deve aceitar os termos de uso."
+                        feedbackType="invalid"
+                    />
+
+                    </Form.Group>
+                </Col>
+        </Row>
+        <br></br>
+        <Row className="justify-content-center align-items-center">
+            <Col className="mx-auto text-center">
+                <Button className="button_cadastrar align-center mx-auto btn-lg" type="submit">Cadastrar</Button>
+            </Col>
+        </Row>
+        <br></br>
+      </Form>
+    );
+  }
 class Cadastro extends React.Component{
+
     render(){
         return (
-        <div class="v811_553"><span class="v811_554">Marcaê</span>
-            <div class="v811_555">
-                <div class="v816_1545">
-                    <div class="v816_1546"><span class="v816_1547">Sou aluno</span></div>
-                </div>
-                <div class="v816_1550">
-                    <div class="v816_1551"><span class="v816_1552">Sou professor</span></div>
-                </div>
-                <div class="v816_1553">
-                    <div class="v816_1531">
-                    </div>
-                </div>
-                <div class="v811_556"><span class="v811_557">Cadastro</span><span class="v811_558">Informe seus
-                        dados</span></div>
-                <div class="v811_559">
-                    <div class="name">
-                        <label class="label-input"> Telefone <input class="campo_cadastro"  id="tel"></input></label>
-                    </div>
-                    <div class="name">
-                        <label class="label-input">Senha<input class="campo_cadastro"  id="senha"></input></label>
-                    </div>
-                    <div class="name">
-                        <label class="label-input">Confirmação Senha<input class="campo_cadastro" ></input></label>
-                    </div>
-                </div>
-                <div class="v816_1532">
-                    <div class="name">
-                        <label class="label-input"> Nome <input class="campo_cadastro" id="nome"></input></label>
-                    </div>
-                    <div class="name">
-                        <label class="label-input">Email<input class="campo_cadastro"  id="email"></input></label>
-                    </div>
-                    <div class="name">
-                        <label class="label-input">Currículo<input class="campo_cadastro"  id="curriculo"></input></label>
-                    </div>
-                </div>
-                <div class="name">
-                    <button class="button_cadastrar" id="#button-login" onclick="addPerfil($('#nome').val(),false,$('#senha').val(),$('#email').val(),$('#tel').val(),$('#curriculo').val());" ><span class="v816_1547">Cadastrar</span></button>
-                </div>
-                <div class="name"></div>
-            </div>
-            <div class="v811_567">
-                <div class="v811_568">
-                    <div class="v811_569"><span class="v811_570">Sobre</span></div>
-                </div>
-                <div class="v811_572">
-                    <div class="v811_573"><span class="v811_574">Home</span></div>
-                </div>
-                <div class="v811_575">
-                    <div class="v811_576"><span class="v811_577">Aulas</span></div>
-                </div><span class="v811_578">Professores </span>
-            </div>
-            <div class="v811_668">
-                <div class="v811_669"><span class="v811_670">Conecte suas Redes</span><span class="v811_671">Conecte o
-                        Marcaê com suas redes sociais preferidas :</span>
-                </div>
-                <div class="v811_682"><span class="v811_683">Info da Empresa</span>
-                    <div class="v811_684"><span class="v811_685">Sobre Nós</span><span class="v811_686">Nossos
-                            Planos</span><span class="v811_687">Estamos contratando !</span><span class="v811_688">Entre
-                            em Contato conosco</span></div>
-                </div>
-                <div class="v811_689"><span class="v811_690">Vantagens Marcaê</span>
-                    <div class="v811_691"><span class="v811_692">Informações Centralizadas</span><span
-                            class="v811_693">Transparência Financeira</span><span class="v811_694">Fonte confiável e
-                            validada</span><span class="v811_695">Espaço para diálogo e aprendizado</span></div>
-                </div>
+        <div className="v811_553">
+            <div className="container text-white">
+            <br></br><br></br>
+                <Card><Card.Body>
+                    <h3 className="text-center">Cadastro</h3>
+                    <h4 className="text-center">Informe seus dados</h4>
+                    <br></br>
+                    <FormExample />      
+                </Card.Body></Card>
+                <br></br><br></br>
             </div>
         </div>
 
