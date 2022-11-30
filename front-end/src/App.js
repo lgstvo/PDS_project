@@ -18,7 +18,6 @@ class App extends Component {
                     <Routes>
                         <Route exact path="/" element={<><Header/><Home/><Footer/></>}/>
                         <Route path="/login" element={<><Header/><Login/><Footer/></>}/>
-                        <Route path="/menu-aluno" element={<><Header/><MenuAluno/><Footer/></>}/>
                         <Route path="/cadastro" element={<><Header/><Cadastro/><Footer/></>}/>
                         <Route path="/menu-aluno" element={<MenuAluno/>}/>
                     </Routes>
