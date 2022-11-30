@@ -1,14 +1,38 @@
 import React from "react";
 import "./css/login.css"
 import Form from 'react-bootstrap/Form';
+import $ from 'jquery';
 
-function redirect() {
-    window.location.href = 'http://localhost:3000/menu-aluno';
+function tipoPerfil(email_informado){
+    $.ajax({
+        url: 'http://localhost:9000/perfil/id', 
+        type: 'GET', 
+        dataType: 'json', 
+        success: function(data) {
+            var i = 0;
+            $.each(data, function(index, element) {   
+                $.each(element, function(ind, e){
+                    if(e.email == email_informado){
+                        return e.isprofessor
+                    }
+                });
+            }); 
+            
+        }, error: function(e) { 
+        }
+    });
+}
+
+function redirect(email) {
+    if(tipoPerfil(email)){
+        window.location.href = 'http://localhost:3000/menu-professor';
+    }else{
+        window.location.href = 'http://localhost:3000/menu-aluno';
+    }
 }
 
 function erroLogin(){
     alert('Email ou senha incorretos')
-    //$('#erro.v803_595').append("<div class='invalid-feedback'>Email ou senha invalidos</div>")
 }
 
 function loginRequest(email, senha){
@@ -31,7 +55,7 @@ function loginRequest(email, senha){
       .then(response => response.json())
       .then(result => {
         if(result.message == 'Autenticacao Sucesso'){
-            redirect()
+            redirect(email)
         }else{
             //alert(result.message)
             erroLogin()
