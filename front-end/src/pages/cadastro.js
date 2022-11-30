@@ -6,50 +6,64 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
-import $ from 'jquery';
+import { useNavigate } from 'react-router-dom';
+
+function cadastraPerfil(nome, boolProf, senha, email, tel, curriculo){
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var raw = JSON.stringify({
+    "nome": nome,
+    "isProfessor": boolProf,
+    "pwd": senha,
+    "email": email,
+    "telefone": tel,
+    "curriculo": [
+      curriculo
+    ]
+  });
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+
+  fetch("http://localhost:9000/perfil", requestOptions)
+    .then(response => response.text())
+    .then(result => {
+      console.log(result);
+      //alert(result)
+      if(result == '{"message":"Perfil Criado"}'){
+        alert('Perfil criado com sucesso!');
+        const navigate = useNavigate();
+        navigate('/login',{ replace:true});
+      }
+    })
+    .catch(error => console.log('error', error)); 
+}
+
+
 
 function FormExample() {
     const [validated, setValidated] = useState(false);
 
-    function cadastraPerfil(nome, boolProf, senha, email, tel, curriculo){
-        var settings = {
-            "url": "http://localhost:9000/perfil",
-            "method": "POST",
-            "timeout": 0,
-            "headers": {
-              "Content-Type": "application/json"
-            },
-            "data": JSON.stringify({
-              "nome": nome,
-              "isProfessor": boolProf,
-              "pwd": senha,
-              "email": email,
-              "telefone": tel,
-              "curriculo": curriculo
-            }),
-          };
-          
-          $.ajax(settings).done(function (response) {
-            alert(response);
-            console.log(response);
-        });
-    };
-  
     const handleSubmit = (event) => {
+      event.preventDefault();
       const form = event.currentTarget;
       if (form.checkValidity() === false) {
         event.preventDefault();
         event.stopPropagation();
       }else{
-        const nome = event.target.elements[0].value;
-        const tipo = event.target.elements[1].value;
-        const senha = event.target.elements[2].value;
-        const email = event.target.elements[3].value;
-        const telefone = event.target.elements[4].value;
-        const curriculo = event.target.elements[5].value;
-      
-        cadastraPerfil(nome,tipo, senha,email, telefone, curriculo);
-      
+        const nome_form = event.target.elements[0].value;
+        const telefone_form = event.target.elements[1].value;
+        const email_form = event.target.elements[2].value;
+        const senha_form = event.target.elements[3].value;
+        const tipo_form = event.target.elements[5].value;
+        const curriculo_form = event.target.elements[6].value;
+        console.log(nome_form,tipo_form, senha_form,email_form, telefone_form, curriculo_form)
+        cadastraPerfil(nome_form,tipo_form, senha_form,email_form, telefone_form, curriculo_form);
     }
       setValidated(true);
       
@@ -59,7 +73,7 @@ function FormExample() {
       <Form noValidate validated={validated} onSubmit={handleSubmit} >
         <Row className="mb-2 h-100 justify-content-center align-items-center">
           <Form.Group as={Col} md="8" controlId="formNome">
-            <Form.Control //name="formName"
+            <Form.Control name="formName"
               required
               type="text"
               placeholder="Nome completo"
